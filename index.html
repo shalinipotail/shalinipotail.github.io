@@ -1,585 +1,715 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Karthika Shalini Potail | AI Engineer</title>
-  <meta name="description" content="Karthika Shalini Potail — AI Engineer portfolio. Time-series ML, healthcare AI, and reproducible experimentation." />
-  <meta name="theme-color" content="#0b1020" />
-  <style>
-    :root{
-      --bg:#090d18;
-      --panel: rgba(255,255,255,.045);
-      --panel2: rgba(255,255,255,.06);
-      --text:#e9ecf4;
-      --muted:#b8c0d9;
-      --line:rgba(255,255,255,.12);
-      --chip:rgba(255,255,255,.08);
-      --accent:#7aa2ff;
-      --accent2:#9d7aff;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      /* ✅ more elegant, calmer background */
-      background:
-        radial-gradient(900px 600px at 12% 12%, rgba(122,162,255,.12), transparent 60%),
-        radial-gradient(800px 520px at 86% 18%, rgba(157,122,255,.10), transparent 60%),
-        radial-gradient(700px 520px at 55% 92%, rgba(255,255,255,.05), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.03), transparent 24%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-      overflow-x:hidden;
-    }
-    a{color:var(--text); text-decoration:none}
-    a:hover{color:var(--accent)}
-    .wrap{max-width:1080px; margin:0 auto; padding:22px 18px 88px}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shalini Potail | AI/ML Portfolio</title>
+<meta name="description" content="AI/ML portfolio for Shalini Potail, Computer Engineering graduate student at The University of Texas at Dallas focused on TinyML, biomedical signal processing, PPG, and wearable healthcare AI." />
+<meta name="theme-color" content="#090c14" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#090c14;
+    --bg2:#0e1322;
+    --text:#eef2ff;
+    --muted:#93a1c2;
+    --soft:#cdd8f2;
+    --line:rgba(200,215,255,.14);
+    --line2:rgba(200,215,255,.22);
+    --panel:rgba(180,200,255,.055);
+    --panel2:rgba(180,200,255,.09);
+    --cyan:#5eead4;
+    --pink:#ff7aa8;
+    --violet:#a78bfa;
+    --gold:#ffd166;
+    --shadow:0 24px 90px rgba(0,0,0,.5);
+    --radius:20px;
+    --ease:cubic-bezier(.2,.8,.2,1);
+    --font-display:'Sora', ui-sans-serif, system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
 
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      display:flex; justify-content:space-between; align-items:center;
-      padding:10px 0 12px;
-      border-bottom:1px solid var(--line);
-      backdrop-filter: blur(12px);
-      background: rgba(9,13,24,.72);
-    }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--font-display);
+    color:var(--text);
+    line-height:1.6;
+    background:
+      radial-gradient(900px 560px at 14% 4%, rgba(255,122,168,.14), transparent 62%),
+      radial-gradient(820px 560px at 88% 10%, rgba(94,234,212,.12), transparent 60%),
+      radial-gradient(780px 520px at 50% 100%, rgba(167,139,250,.10), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,.03), transparent 28%),
+      var(--bg);
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+  }
 
-    /* Elegant (not bold) */
-    .brand{
-      font-weight:420;
-      letter-spacing:.16px;
-      display:flex; align-items:center; gap:10px;
-      color: rgba(233,236,244,.92);
-    }
-    .badge{
-      font-size:12px;
-      font-weight:500;
-      padding:5px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-    }
+  body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+      linear-gradient(rgba(200,215,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,215,255,.025) 1px, transparent 1px);
+    background-size:72px 72px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,.6), transparent 72%);
+    z-index:-2;
+  }
 
-    .nav{
-      display:flex; align-items:center; gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .nav a{
-      color:var(--muted);
-      font-weight:560;
-      font-size:13px;
-      padding:8px 10px;
-      border-radius:12px;
-      border:1px solid transparent;
-      transition: background .12s ease, border-color .12s ease, transform .08s ease;
-    }
-    .nav a:hover{
-      color:var(--text);
-      border-color: rgba(122,162,255,.32);
-      background: rgba(255,255,255,.045);
-      transform: translateY(-1px);
-    }
+  #petals{position:fixed; inset:0; z-index:-1; pointer-events:none;}
 
-    .hero{padding:36px 0 14px}
-    .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      padding:7px 12px;
-      border-radius:999px;
-      color:var(--muted);
-      font-size:13px;
-      font-weight:560;
-    }
+  a{color:inherit; text-decoration:none}
+  p{margin:0}
+  .wrap{max-width:1160px; margin:0 auto; padding:20px 20px 72px; position:relative; z-index:1}
 
-    /* ✅ Headings: lighter, not thick */
-    h1, h2, h3{
-      font-weight:600;
-      letter-spacing:-.12px;
-    }
-    h1{margin:14px 0 10px; font-size:44px; line-height:1.1}
-    .subtitle{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:16px;
-      max-width:86ch;
-      font-weight:400;
-    }
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:12px 0 14px;
+    backdrop-filter:blur(18px);
+  }
+  .topbar:after{
+    content:""; position:absolute; left:-24px; right:-24px; bottom:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--line), transparent);
+  }
 
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 0}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
-      color:var(--text);
-      font-weight:560;
-      transition: transform .08s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(122,162,255,.42);
-      background:rgba(255,255,255,.07);
-      box-shadow: 0 8px 28px rgba(0,0,0,.22);
-    }
-    .btn.primary{
-      background:linear-gradient(135deg, rgba(122,162,255,.22), rgba(157,122,255,.18));
-      border-color:rgba(122,162,255,.45);
-    }
-    .btn.ghost{
-      background: transparent;
-      border-color: rgba(255,255,255,.16);
-      color: var(--muted);
-    }
-    .btn.ghost:hover{color:var(--text)}
+  .brand{display:flex; align-items:center; gap:11px; font-weight:700; letter-spacing:-.01em}
+  .brandMark{
+    width:36px; height:36px; position:relative;
+    display:grid; place-items:center;
+    background:linear-gradient(135deg, rgba(255,122,168,.28), rgba(94,234,212,.20));
+    border:1px solid var(--line2);
+    clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    font-family:var(--font-mono);
+    font-size:12px; font-weight:700;
+    box-shadow:0 0 22px rgba(255,122,168,.22);
+    animation:emblemSpin 12s linear infinite;
+  }
+  @keyframes emblemSpin{
+    0%,92%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+  }
 
-    .grid{display:grid; gap:14px}
-    @media(min-width:920px){ .grid.cols2{grid-template-columns:1fr 1fr} }
-    @media(min-width:1080px){ .grid.cols3{grid-template-columns:1fr 1fr 1fr} }
+  .nav{
+    display:flex; align-items:center; gap:2px; flex-wrap:wrap; justify-content:flex-end;
+    padding:6px; border:1px solid var(--line); border-radius:999px;
+    background:rgba(9,12,20,.5); box-shadow:0 14px 40px rgba(0,0,0,.2);
+    font-family:var(--font-mono);
+  }
+  .nav a{
+    position:relative; color:var(--muted); font-size:12.5px; font-weight:500;
+    padding:8px 12px; border-radius:999px; letter-spacing:.02em;
+    transition:color .25s var(--ease), background .25s var(--ease);
+  }
+  .nav a:hover{color:var(--text); background:rgba(255,255,255,.07)}
 
-    .section{margin-top:32px}
-    .section h2{margin:0 0 10px; font-size:20px}
-    .section p{margin:0; color:var(--muted); font-weight:400}
+  .vitals{
+    display:inline-flex; align-items:center; gap:7px; font-family:var(--font-mono);
+    font-size:11px; color:var(--cyan); letter-spacing:.06em;
+  }
+  .vitals .dot{
+    width:7px; height:7px; border-radius:999px; background:var(--cyan);
+    box-shadow:0 0 12px rgba(94,234,212,.9);
+    animation:pulseDot 1.15s ease-in-out infinite;
+  }
+  @keyframes pulseDot{
+    0%,100%{opacity:.4; transform:scale(.8)}
+    50%{opacity:1; transform:scale(1.15)}
+  }
 
-    .card{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius:18px;
-      padding:16px;
-      transition: transform .10s ease, border-color .12s ease, background .12s ease;
-    }
-    .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(122,162,255,.22);
-      background: rgba(255,255,255,.055);
-    }
-    .card h3{margin:0 0 6px; font-size:18px}
-    .meta{
-      color:var(--muted);
-      font-size:13px;
-      margin:0 0 10px;
-      font-weight:400;
-    }
-    .small{font-size:13px; color:var(--muted); font-weight:400}
+  .hero{position:relative; display:grid; grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr); gap:28px; align-items:center; min-height:620px; padding:64px 0 40px}
 
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
-    .chip{
-      font-size:12px;
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--line);
-      white-space:nowrap;
-      font-weight:500;
-    }
+  h1,h2,h3{margin:0; letter-spacing:-.03em; line-height:1.08; font-family:var(--font-display)}
+  h1{font-size:clamp(38px, 6.2vw, 74px); margin-top:20px; max-width:820px; font-weight:800}
+  h2{font-size:clamp(28px, 3.8vw, 42px); font-weight:750}
+  h3{font-size:18px; letter-spacing:-.02em; font-weight:700}
 
-    .row{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      margin-top:12px;
-      flex-wrap:wrap;
-    }
-    .pill{
-      font-size:12px;
-      font-weight:500;
-      letter-spacing:.12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: rgba(233,236,244,.78);
-    }
+  .gradientText{
+    background:linear-gradient(120deg, #ffffff 10%, var(--cyan) 45%, var(--pink) 78%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    background-size:200% 100%;
+    animation:shimmerText 7s ease-in-out infinite;
+  }
+  @keyframes shimmerText{
+    0%,100%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+  }
 
-    .divider{
-      height:1px;
-      background: var(--line);
-      margin:16px 0 0;
-    }
+  .kicker{
+    display:inline-flex; align-items:center; gap:9px; width:max-content; max-width:100%;
+    padding:8px 13px; border-radius:999px; border:1px solid var(--line);
+    background:var(--panel); color:var(--soft); font-family:var(--font-mono);
+    font-size:12px; font-weight:500; letter-spacing:.02em;
+    box-shadow:0 18px 60px rgba(0,0,0,.2);
+  }
+  .kicker span{width:8px; height:8px; border-radius:999px; background:var(--pink); box-shadow:0 0 20px rgba(255,122,168,.8); animation:pulseDot 1.4s ease-in-out infinite}
 
-    .footer{
-      margin-top:52px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      font-weight:400;
-    }
+  .subtitle{color:var(--muted); font-size:17.5px; max-width:720px; margin-top:20px}
+  .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
 
-    ul.list{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      font-weight:400;
-    }
-    ul.list li{margin:6px 0}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    border:1px solid var(--line2); border-radius:999px; padding:11px 18px;
+    color:var(--text); background:var(--panel); font-size:13.5px; font-weight:600;
+    cursor:pointer; position:relative; overflow:hidden;
+    box-shadow:0 12px 36px rgba(0,0,0,.2);
+    transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .btn:before{
+    content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+    transform:skewX(-18deg); transition:left .55s var(--ease);
+  }
+  .btn:hover:before{left:130%}
+  .btn:hover{transform:translateY(-3px); border-color:rgba(94,234,212,.5); box-shadow:0 18px 48px rgba(0,0,0,.32)}
+  .btn.primary{border-color:rgba(255,122,168,.5); background:linear-gradient(135deg, rgba(255,122,168,.25), rgba(94,234,212,.18))}
+  .btn.ghost{background:transparent; box-shadow:none}
 
-    /* Modal */
-    .modalOverlay{
-      position:fixed; inset:0; z-index:999;
-      background: rgba(0,0,0,.62);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-    }
-    .modal{
-      width:min(720px, 100%);
-      border:1px solid var(--line);
-      background: rgba(9,13,24,.92);
-      border-radius:20px;
-      padding:16px;
-      box-shadow: 0 18px 70px rgba(0,0,0,.55);
-      backdrop-filter: blur(12px);
-    }
-    .modalTop{
-      display:flex; justify-content:space-between; align-items:center; gap:12px;
-      padding:2px 2px 10px;
-      border-bottom:1px solid var(--line);
-    }
-    .modalTop strong{font-size:14px; letter-spacing:.2px; font-weight:600}
-    .close{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      border-radius:12px;
-      padding:8px 10px;
-      font-weight:560;
-      cursor:pointer;
-    }
-    .close:hover{border-color: rgba(122,162,255,.35)}
-    .modalBody{padding:12px 2px 2px}
-    .kv{
-      display:grid; gap:10px;
-      grid-template-columns: 1fr;
-      margin-top:8px;
-    }
-    @media(min-width:740px){ .kv{grid-template-columns:1fr 1fr} }
-    .kv .k{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius:16px;
-      padding:12px;
-    }
-    .k .label{
-      font-size:12px;
-      color:var(--muted);
-      font-weight:560;
-      letter-spacing:.32px;
-      text-transform:uppercase
-    }
-    .k .value{margin-top:6px; color:var(--text); font-weight:400}
+  .pulseBanner{margin-top:34px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.03); padding:10px 14px}
+  .pulseBanner svg{display:block; width:100%; height:56px}
+  .pulseLabel{display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:10.5px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-top:6px}
 
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      .btn,.card,.nav a{transition:none}
-      .btn:hover,.card:hover,.nav a:hover{transform:none}
-    }
-  </style>
+  .heroPanel{
+    position:relative; min-height:460px; border:1px solid var(--line); border-radius:30px; padding:18px;
+    background:linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.03)), rgba(255,255,255,.04);
+    box-shadow:var(--shadow); overflow:hidden;
+    transform:perspective(1000px) rotateY(-5deg) rotateX(2deg);
+    transition:transform .7s var(--ease), border-color .35s var(--ease);
+  }
+  .heroPanel:hover{transform:perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-4px); border-color:rgba(94,234,212,.32)}
+  .heroPanel:before{
+    content:""; position:absolute; inset:-35% -20% auto auto; width:280px; height:280px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,122,168,.28), transparent 68%); filter:blur(12px);
+  }
+
+  .heroCard{position:relative; border:1px solid var(--line); border-radius:24px; background:rgba(9,12,20,.55); backdrop-filter:blur(16px); padding:22px; min-height:100%}
+  .profileTop{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:24px}
+  .avatar{
+    width:56px; height:56px; display:grid; place-items:center; position:relative;
+    background:linear-gradient(135deg, rgba(255,122,168,.35), rgba(94,234,212,.22));
+    border:1px solid var(--line2); font-weight:800; font-size:17px; font-family:var(--font-mono);
+    clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  .avatar:after{
+    content:""; position:absolute; inset:-6px; border:1px solid rgba(94,234,212,.4);
+    clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation:ringPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes ringPulse{
+    0%,100%{opacity:.25; transform:scale(1)}
+    50%{opacity:.7; transform:scale(1.08)}
+  }
+  .status{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-family:var(--font-mono); color:#a8f0ca; border:1px solid rgba(168,240,202,.2); background:rgba(168,240,202,.06); padding:7px 10px; border-radius:999px}
+  .status:before{content:""; width:7px; height:7px; border-radius:50%; background:#a8f0ca; box-shadow:0 0 16px rgba(168,240,202,.8)}
+
+  .profileName{font-size:28px; font-weight:800; letter-spacing:-.03em; line-height:1.05}
+  .profileRole{margin-top:8px; color:var(--muted); font-size:13.5px; font-family:var(--font-mono)}
+
+  .metrics{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:22px 0}
+  .metric{border:1px solid var(--line); border-radius:16px; padding:13px 10px; background:rgba(255,255,255,.035); text-align:center}
+  .metric strong{display:block; font-size:19px; letter-spacing:-.02em; font-family:var(--font-mono); color:var(--cyan)}
+  .metric span{display:block; color:var(--muted); font-size:11px; margin-top:3px}
+
+  .focusList{display:grid; gap:10px; margin-top:10px}
+  .focusItem{display:flex; align-items:flex-start; gap:10px; color:var(--soft); font-size:13.5px; padding:12px; border-radius:16px; background:rgba(255,255,255,.03); border:1px solid var(--line)}
+  .focusItem b{font-weight:700; color:var(--text)}
+  .focusIcon{width:22px; height:22px; border-radius:8px; flex:0 0 auto; display:grid; place-items:center; background:rgba(255,122,168,.14); color:var(--pink); font-size:11px; font-family:var(--font-mono)}
+
+  .section{padding:54px 0; scroll-margin-top:90px}
+  .sectionHead{display:flex; justify-content:space-between; align-items:end; gap:18px; margin-bottom:20px}
+  .sectionHead p{color:var(--muted); max-width:640px; margin-top:9px; font-size:14.5px}
+
+  .eyebrow{
+    position:relative; display:inline-flex; align-items:center; color:var(--cyan);
+    text-transform:uppercase; letter-spacing:.18em; font-size:11.5px; font-weight:700;
+    margin-bottom:10px; font-family:var(--font-mono); padding-left:16px;
+  }
+  .eyebrow:before{content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:10px; height:1.5px; background:var(--cyan); box-shadow:0 0 8px rgba(94,234,212,.8)}
+
+  .grid{display:grid; gap:16px}
+  .cols2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cols3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+  .card{
+    position:relative; border:1px solid var(--line); border-radius:var(--radius);
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    padding:22px; overflow:hidden; box-shadow:0 18px 60px rgba(0,0,0,.16);
+    transition:transform .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease);
+  }
+  .card:before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(360px 120px at var(--mx,50%) var(--my,0%), rgba(255,122,168,.14), transparent 58%);
+    opacity:0; transition:opacity .45s var(--ease); pointer-events:none;
+  }
+  .card:after{
+    content:""; position:absolute; width:16px; height:16px; top:10px; right:10px;
+    border-top:1.5px solid transparent; border-right:1.5px solid transparent;
+    transition:border-color .35s var(--ease);
+  }
+  .card:hover{transform:translateY(-7px); border-color:rgba(94,234,212,.34); box-shadow:0 28px 90px rgba(0,0,0,.3)}
+  .card:hover:before{opacity:1}
+  .card:hover:after{border-color:var(--cyan)}
+  .card > *{position:relative}
+  .card p{color:var(--muted); font-size:13.5px; margin-top:10px}
+
+  .row{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+  .meta{color:var(--muted); font-size:12.5px; margin-top:8px; font-family:var(--font-mono)}
+
+  .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px}
+  .chip{display:inline-flex; align-items:center; gap:6px; color:rgba(238,242,255,.8); font-size:11.5px; font-weight:500; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.055); border:1px solid var(--line); font-family:var(--font-mono)}
+
+  .pill{display:inline-flex; align-items:center; gap:6px; color:rgba(238,242,255,.82); font-size:11.5px; font-weight:600; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line2); white-space:nowrap; font-family:var(--font-mono)}
+  .pill.good{color:#a8f0ca; border-color:rgba(168,240,202,.22); background:rgba(168,240,202,.065)}
+  .pill.warn{color:var(--gold); border-color:rgba(255,209,102,.22); background:rgba(255,209,102,.065)}
+
+  .projectCard{min-height:288px; display:flex; flex-direction:column; justify-content:space-between}
+  .projectCard .btn{margin-top:18px; box-shadow:none}
+
+  .list{margin:14px 0 0; padding:0; list-style:none; display:grid; gap:10px}
+  .list li{color:var(--muted); font-size:13.5px; padding-left:22px; position:relative}
+  .list li:before{content:""; position:absolute; left:0; top:.7em; width:8px; height:8px; border-radius:999px; background:linear-gradient(135deg, var(--pink), var(--cyan)); box-shadow:0 0 16px rgba(255,122,168,.4)}
+
+  .timeline{display:grid; gap:14px; margin-top:6px}
+  .timelineItem{position:relative; padding:6px 0 6px 20px; border-left:1px solid rgba(94,234,212,.32)}
+  .timelineItem:before{content:""; position:absolute; left:-5px; top:13px; width:9px; height:9px; border-radius:999px; background:var(--cyan); box-shadow:0 0 20px rgba(94,234,212,.7)}
+  .timelineItem strong{display:block; font-weight:700; letter-spacing:-.01em}
+  .timelineItem span{display:block; color:var(--muted); font-size:12.5px; margin-top:3px}
+
+  .contactCard{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  .contactItem{border:1px solid var(--line); border-radius:20px; padding:18px; background:rgba(255,255,255,.035)}
+  .contactItem .label{font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--muted); font-weight:700; font-family:var(--font-mono)}
+  .contactItem .value{margin-top:8px; word-break:break-word; font-weight:650}
+
+  .footer{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; border-top:1px solid var(--line); margin-top:32px; padding-top:20px; color:var(--muted); font-size:12.5px; font-family:var(--font-mono)}
+
+  .modalOverlay{position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(4,6,12,.6); backdrop-filter:blur(10px)}
+  .modalOverlay.show{display:flex; animation:fadeIn .25s var(--ease) both}
+  .modal{width:min(740px,100%); max-height:min(82vh,720px); overflow:auto; border:1px solid var(--line2); border-radius:24px; padding:18px; background:linear-gradient(180deg, rgba(18,22,38,.97), rgba(8,11,20,.97)); box-shadow:0 30px 110px rgba(0,0,0,.6); animation:modalUp .32s var(--ease) both}
+  .modalTop{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:4px 4px 14px; border-bottom:1px solid var(--line)}
+  .modalTop strong{font-size:15px; letter-spacing:-.01em}
+  .close{border:1px solid var(--line2); background:rgba(255,255,255,.06); color:var(--text); border-radius:999px; padding:9px 14px; font-weight:600; cursor:pointer; font-family:var(--font-mono); font-size:12.5px; transition:transform .2s var(--ease), background .2s var(--ease)}
+  .close:hover{transform:translateY(-1px); background:rgba(255,255,255,.1)}
+  .modalBody{padding-top:14px}
+  .kv{display:grid; gap:10px}
+  .k{border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:16px; padding:14px}
+  .k .label{font-size:11px; color:var(--pink); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-family:var(--font-mono)}
+  .k .value{margin-top:7px; color:var(--soft); font-size:13.5px}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease), transform .8s var(--ease); transition-delay:var(--delay,0ms)}
+  .reveal.in{opacity:1; transform:translateY(0)}
+
+  @keyframes fadeIn{from{opacity:0} to{opacity:1}}
+  @keyframes modalUp{from{opacity:0; transform:translateY(18px) scale(.98)} to{opacity:1; transform:translateY(0) scale(1)}}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *, *:before, *:after{animation:none !important; transition:none !important}
+    .reveal{opacity:1; transform:none}
+    #petals{display:none}
+  }
+
+  @media (max-width: 900px){
+    .hero{grid-template-columns:1fr; min-height:auto; padding-top:48px}
+    .heroPanel{transform:none; min-height:auto}
+    .cols3{grid-template-columns:1fr}
+    .contactCard{grid-template-columns:1fr}
+  }
+  @media (max-width: 720px){
+    .wrap{padding:14px 16px 54px}
+    .topbar{align-items:flex-start; flex-direction:column; gap:10px}
+    .nav{justify-content:flex-start; border-radius:20px}
+    .nav a{padding:7px 10px}
+    .cols2{grid-template-columns:1fr}
+    .section{padding:38px 0}
+    .sectionHead{display:block}
+    .metrics{grid-template-columns:1fr}
+    .heroCard{padding:18px}
+    .heroPanel{padding:12px; border-radius:24px}
+  }
+</style>
 </head>
 
 <body>
+  <canvas id="petals"></canvas>
+
   <div class="wrap">
     <div class="topbar">
-      <div class="brand">
-        Karthika Shalini Potail
-        <span class="badge">AI Engineer</span>
-      </div>
-      <div class="nav">
-        <a href="#highlights">Highlights</a>
-        <a href="#work">Work</a>
-        <a href="#research">Research</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
+      <a class="brand" href="#top" aria-label="Shalini Potail portfolio home">
+        <span class="brandMark">SP</span>
+        <span>Shalini Potail</span>
+      </a>
+      <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap">
+        <span class="vitals"><span class="dot"></span>SIGNAL: LIVE</span>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#opensource">Open Source</a>
+          <a href="#research">Research</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
     </div>
 
-    <header class="hero">
-      <div class="kicker">Machine Learning • Time-Series • Healthcare AI</div>
-      <h1>Building machine learning systems for real-world signals.</h1>
-
-      <!-- ✅ About in ONE sentence -->
-      <p class="subtitle">
-        I build end-to-end ML systems across data quality, feature engineering, and baseline-to-iteration modeling for time-series signals (PPG).
-      </p>
-
-      <div class="cta">
-        <button class="btn primary" id="openContact">Contact</button>
-        <a class="btn" href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
-        <a class="btn ghost" href="#work">View work</a>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="grid cols3" style="margin-top:16px;">
-        <div class="card">
-          <h3>What I do</h3>
-          <p class="small">Time-series ML, signal preprocessing, feature extraction, and baseline-to-iteration modeling.</p>
-          <div class="chips">
-            <span class="chip">PPG</span><span class="chip">Regression</span><span class="chip">Feature selection</span>
-          </div>
+    <header class="hero" id="top">
+      <div class="reveal">
+        <div class="kicker"><span></span>AI/ML • TinyML • Biomedical Signal Processing</div>
+        <h1><span class="gradientText">Building AI for wearable healthcare</span> and real-world physiological signals.</h1>
+        <p class="subtitle">
+          I am a Computer Engineering graduate student at The University of Texas at Dallas, focused on machine learning, TinyML, biomedical signal processing, and edge-ready healthcare AI. My current work explores cuffless blood pressure estimation using PPG signals and the validation challenges behind reliable wearable health monitoring.
+        </p>
+        <div class="cta">
+          <button class="btn primary" id="openContact">Contact me</button>
+          <a class="btn" href="https://www.linkedin.com/in/shalinipotail" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          <a class="btn ghost" href="#work">View work</a>
         </div>
-        <div class="card">
-          <h3>How I work</h3>
-          <p class="small">Reproducible notebooks + scripts, structured outputs, and clean documentation for iteration.</p>
-          <div class="chips">
-            <span class="chip">Reproducibility</span><span class="chip">Versioning</span><span class="chip">Reporting</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>What you get</h3>
-          <p class="small">Clear problem framing, measurable baselines, and organized artifacts.</p>
-          <div class="chips">
-            <span class="chip">Baselines</span><span class="chip">Artifacts</span><span class="chip">Insights</span>
-          </div>
+
+        <div class="pulseBanner" aria-hidden="true">
+          <svg viewBox="0 0 600 60" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="pulseGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ff7aa8"/>
+                <stop offset="55%" stop-color="#5eead4"/>
+                <stop offset="100%" stop-color="#a78bfa"/>
+              </linearGradient>
+            </defs>
+            <path id="pulsePath" d="M0,30 L110,30 L128,8 L142,52 L158,16 L172,30 L230,30 L246,24 L260,36 L276,30 L600,30"
+              fill="none" stroke="url(#pulseGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <div class="pulseLabel"><span>PPG · CH01</span><span id="bpmLabel">72 BPM</span></div>
         </div>
       </div>
+
+      <aside class="heroPanel reveal" style="--delay:120ms" aria-label="Profile summary card">
+        <div class="heroCard">
+          <div class="profileTop">
+            <div class="avatar">SP</div>
+            <div class="status">Open to research &amp; AI/ML roles</div>
+          </div>
+          <div class="profileName">Shalini Potail</div>
+          <div class="profileRole">Computer Engineering Graduate Student · UT Dallas</div>
+
+          <div class="metrics">
+            <div class="metric"><strong>PPG</strong><span>Signal research</span></div>
+            <div class="metric"><strong>TinyML</strong><span>Edge focus</span></div>
+            <div class="metric"><strong>AI/ML</strong><span>Healthcare</span></div>
+          </div>
+
+          <div class="focusList">
+            <div class="focusItem"><span class="focusIcon">01</span><span><b>Research:</b> Cuffless blood pressure estimation using wearable PPG signals.</span></div>
+            <div class="focusItem"><span class="focusIcon">02</span><span><b>Engineering:</b> Preprocessing, feature extraction, model evaluation, quantization, and edge deployment readiness.</span></div>
+            <div class="focusItem"><span class="focusIcon">03</span><span><b>Direction:</b> Reliable, interpretable, and practical AI systems for healthcare applications.</span></div>
+          </div>
+        </div>
+      </aside>
     </header>
 
     <section class="section" id="highlights">
-      <h2>Technical highlights</h2>
-      <p>Strengths that translate directly to production ML work.</p>
-
-      <div class="grid cols2" style="margin-top:14px;">
-        <div class="card">
-          <h3>Time-series + signal processing</h3>
-          <p class="small">Segmentation, filtering, normalization, quality checks, and waveform-driven feature extraction.</p>
-          <div class="chips">
-            <span class="chip">Segmentation</span><span class="chip">Filtering</span><span class="chip">Normalization</span>
-            <span class="chip">Morphology features</span>
-          </div>
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Technical strengths</div>
+          <h2>Research depth with practical ML execution.</h2>
         </div>
+        <p>A quick read on where the depth is: biomedical signals, ML workflow discipline, and edge deployment thinking.</p>
+      </div>
 
-        <div class="card">
-          <h3>Modeling discipline</h3>
-          <p class="small">Baselines first, controlled changes, clean comparisons, and consistent reporting.</p>
-          <div class="chips">
-            <span class="chip">Ridge regression</span><span class="chip">Ensembles</span><span class="chip">Cross-validation</span>
-            <span class="chip">Error analysis</span>
-          </div>
+      <div class="grid cols3">
+        <div class="card reveal" style="--delay:40ms">
+          <h3>Biomedical time-series</h3>
+          <p>PPG windowing, filtering, segmentation, signal quality checks, normalization, and waveform-driven feature extraction.</p>
+          <div class="chips"><span class="chip">PPG</span><span class="chip">Windowing</span><span class="chip">Morphology</span></div>
         </div>
-
-        <div class="card">
-          <h3>Experiment organization</h3>
-          <p class="small">Repeatable runs, saved artifacts, and structured outputs for review and iteration.</p>
-          <div class="chips">
-            <span class="chip">Notebooks + scripts</span><span class="chip">Artifacts</span><span class="chip">Plots</span>
-            <span class="chip">Run summaries</span>
-          </div>
+        <div class="card reveal" style="--delay:90ms">
+          <h3>Machine learning workflow</h3>
+          <p>Baselines, controlled comparisons, model evaluation, error analysis, and measurable iteration using structured outputs.</p>
+          <div class="chips"><span class="chip">Regression</span><span class="chip">Feature extraction</span><span class="chip">Evaluation</span></div>
         </div>
-
-        <div class="card">
-          <h3>Engineering mindset</h3>
-          <p class="small">Focus on clarity, maintainability, and practical constraints.</p>
-          <div class="chips">
-            <span class="chip">Robustness</span><span class="chip">Documentation</span><span class="chip">Iteration</span>
-          </div>
+        <div class="card reveal" style="--delay:140ms">
+          <h3>TinyML + edge readiness</h3>
+          <p>Lightweight model design, Float32 vs Int8 trade-off analysis, quantization, and resource-constrained deployment thinking.</p>
+          <div class="chips"><span class="chip">TinyML</span><span class="chip">Edge Impulse</span><span class="chip">Quantization</span></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="work">
-      <h2>Selected work</h2>
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Selected work</div>
+          <h2>Projects with a clear healthcare AI theme.</h2>
+        </div>
+        <p>Four focused projects rather than a scattered list.</p>
+      </div>
 
-      <div class="grid cols2" style="margin-top:14px;">
-        <div class="card">
-          <div class="row">
-            <h3 style="margin:0;">Cuffless blood pressure estimation (PPG)</h3>
-            <span class="pill">Active</span>
+      <div class="grid cols2">
+        <div class="card projectCard reveal" style="--delay:40ms">
+          <div>
+            <div class="row">
+              <h3>TinyML-based blood pressure monitoring from PPG</h3>
+              <span class="pill good">Conference work</span>
+            </div>
+            <div class="meta">PPG • TinyML • Model quantization • Edge AI</div>
+            <p>Developed a lightweight machine learning workflow for continuous cuffless blood pressure estimation using PPG signals, focusing on preprocessing, feature extraction, model evaluation, and deployment readiness for resource-constrained devices.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Edge Impulse</span><span class="chip">TinyML</span></div>
           </div>
-          <p class="meta">Time-series • Feature extraction • Regression workflow</p>
-          <p class="small">
-            Workflow to prepare PPG signals, extract morphology features, run feature selection experiments,
-            build regression baselines, and generate consistent outputs for iteration.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Scikit-learn</span>
-          </div>
-          <div class="row">
-            <button class="btn" data-modal="ppg">Details</button>
-            <span class="pill">Project</span>
-          </div>
+          <div class="row"><button class="btn" data-modal="tinyml">Details</button><span class="pill">Project</span></div>
         </div>
 
-        <div class="card">
-          <div class="row">
-            <h3 style="margin:0;">Face mask detection (CNN)</h3>
-            <span class="pill">Project</span>
+        <div class="card projectCard reveal" style="--delay:90ms">
+          <div>
+            <div class="row">
+              <h3>Survey on continuous cuffless BP monitoring using PPG</h3>
+              <span class="pill warn">In progress</span>
+            </div>
+            <div class="meta">Critical survey • Validation • Clinical limitations</div>
+            <p>Writing a critical survey on PPG-based cuffless blood pressure monitoring, covering physiological mechanisms, datasets, calibration dependence, subject leakage, motion sensitivity, validation standards, and clinical translation gaps.</p>
+            <div class="chips"><span class="chip">Literature review</span><span class="chip">PPG</span><span class="chip">Validation</span><span class="chip">Clinical translation</span></div>
           </div>
-          <p class="meta">Computer vision • Preprocessing • Training workflow</p>
-          <p class="small">
-            CNN-based image classification workflow including preprocessing, augmentation, training/validation setup, and experiment organization for reproducible runs.
-          </p>
-          <div class="chips">
-            <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">CNN</span><span class="chip">Deep learning</span>
-          </div>
-          <div class="row">
-            <button class="btn" data-modal="cnn">Details</button>
-            <span class="pill">Project</span>
-          </div>
+          <div class="row"><button class="btn" data-modal="survey">Details</button><span class="pill">Research</span></div>
         </div>
 
-        <div class="card">
-          <div class="row">
-            <h3 style="margin:0;">Early disease prediction (ML)</h3>
-            <span class="pill">Project</span>
+        <div class="card projectCard reveal" style="--delay:40ms">
+          <div>
+            <div class="row">
+              <h3>Face mask detection</h3>
+              <span class="pill">Computer vision</span>
+            </div>
+            <div class="meta">Image preprocessing • CNN workflow • Classification</div>
+            <p>Built a computer vision project for face mask detection using image preprocessing, model training, validation, and organized experiment outputs.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">CNN</span><span class="chip">Deep learning</span></div>
           </div>
-          <p class="meta">Structured data • EDA • Model comparison</p>
-          <p class="small">
-            Data cleaning + EDA, feature engineering, training multiple ML models, and comparison workflows
-            with consistent evaluation scripts.
-          </p>
-          <div class="chips">
-            <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">EDA</span>
-          </div>
-          <div class="row">
-            <button class="btn" data-modal="ml">Details</button>
-            <span class="pill">Project</span>
-          </div>
+          <div class="row"><button class="btn" data-modal="cnn">Details</button><span class="pill">Project</span></div>
         </div>
 
-        <div class="card">
-          <div class="row">
-            <h3 style="margin:0;">Smart Farmer (IoT + cloud analytics)</h3>
-            <span class="pill">Project</span>
+        <div class="card projectCard reveal" style="--delay:90ms">
+          <div>
+            <div class="row">
+              <h3>Smart Farmer</h3>
+              <span class="pill">IoT + cloud</span>
+            </div>
+            <div class="meta">IoT data • Cloud workflows • Monitoring</div>
+            <p>Integrated IoT device data into cloud workflows and storage to support monitoring and analytics-driven decision workflows for smart agriculture.</p>
+            <div class="chips"><span class="chip">IBM Watson</span><span class="chip">Node-RED</span><span class="chip">Cloudant DB</span><span class="chip">Python</span></div>
           </div>
-          <p class="meta">IoT data • Cloud DB • Workflow automation</p>
-          <p class="small">
-            Integrated IoT device data into cloud workflows and storage to support monitoring and analytics-driven decision workflows.
-          </p>
-          <div class="chips">
-            <span class="chip">IBM Watson</span><span class="chip">Node-RED</span><span class="chip">Cloudant DB</span><span class="chip">Python</span>
-          </div>
-          <div class="row">
-            <button class="btn" data-modal="iot">Details</button>
-            <span class="pill">Project</span>
-          </div>
+          <div class="row"><button class="btn" data-modal="iot">Details</button><span class="pill">Project</span></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="opensource">
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Open-source</div>
+          <h2>Full implementations, live on GitHub.</h2>
+        </div>
+        <p>Five self-contained repos covering the pipeline end to end: signal quality, signal processing, diagnostic classification, regression, and interpretability.</p>
+      </div>
+
+      <div class="grid cols3">
+        <div class="card projectCard reveal" style="--delay:40ms">
+          <div>
+            <h3>PPG Signal Toolkit</h3>
+            <div class="meta">Filtering • Beat detection • HR/HRV</div>
+            <p>Bandpass filtering, beat detection, heart-rate estimation, and HRV features (SDNN, RMSSD) from a synthetic PPG waveform.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">SciPy</span><span class="chip">PPG</span></div>
+          </div>
+          <div class="row"><a class="btn" href="https://github.com/shalinipotail/ppg-signal-toolkit" target="_blank" rel="noreferrer noopener">View repository →</a></div>
+        </div>
+
+        <div class="card projectCard reveal" style="--delay:90ms">
+          <div>
+            <h3>TinyML Quantization Benchmark</h3>
+            <div class="meta">Float32 vs Int8 • Size • Latency</div>
+            <p>Trains a BP regression model and quantizes it to Int8, comparing model size, inference latency, and accuracy trade-offs for edge deployment.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">TinyML</span></div>
+          </div>
+          <div class="row"><a class="btn" href="https://github.com/shalinipotail/tinyml-quantization-benchmark" target="_blank" rel="noreferrer noopener">View repository →</a></div>
+        </div>
+
+        <div class="card projectCard reveal" style="--delay:140ms">
+          <div>
+            <h3>PPG Signal Quality Classifier</h3>
+            <div class="meta">Motion artifacts • 98% accuracy</div>
+            <p>Flags PPG windows as clean or motion-corrupted before they reach an HR/BP pipeline, using spectral entropy, variance, and peak-regularity features.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">Random Forest</span></div>
+          </div>
+          <div class="row"><a class="btn" href="https://github.com/shalinipotail/ppg-signal-quality-classifier" target="_blank" rel="noreferrer noopener">View repository →</a></div>
+        </div>
+
+        <div class="card projectCard reveal" style="--delay:40ms">
+          <div>
+            <h3>ECG Arrhythmia Classifier</h3>
+            <div class="meta">Normal • PVC • Fusion — 93% accuracy</div>
+            <p>Classifies heartbeats into Normal, PVC, and Fusion/Other from beat morphology features, using a small MLP trained on synthetic ECG waveforms.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">MLP</span><span class="chip">ECG</span></div>
+          </div>
+          <div class="row"><a class="btn" href="https://github.com/shalinipotail/ecg-arrhythmia-classifier" target="_blank" rel="noreferrer noopener">View repository →</a></div>
+        </div>
+
+        <div class="card projectCard reveal" style="--delay:90ms">
+          <div>
+            <h3>Explainable BP Dashboard</h3>
+            <div class="meta">Permutation importance • Interpretability</div>
+            <p>Goes beyond accuracy: a static dashboard showing which physiological features actually drive the BP prediction, and confirming a sanity-check feature carries no weight.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Random Forest</span><span class="chip">XAI</span></div>
+          </div>
+          <div class="row"><a class="btn" href="https://github.com/shalinipotail/explainable-bp-dashboard" target="_blank" rel="noreferrer noopener">View repository →</a></div>
+        </div>
+      </div>
+
+      <div class="reveal" style="--delay:140ms; margin-top:22px; text-align:center">
+        <a href="https://github.com/shalinipotail" target="_blank" rel="noreferrer noopener" style="color:var(--muted); font-family:var(--font-mono); font-size:13px; letter-spacing:.02em; border-bottom:1px solid var(--line2); padding-bottom:2px; transition:color .25s var(--ease), border-color .25s var(--ease)" onmouseover="this.style.color='var(--text)'; this.style.borderColor='var(--cyan)'" onmouseout="this.style.color='var(--muted)'; this.style.borderColor='var(--line2)'">
+          View full GitHub profile — github.com/shalinipotail
+        </a>
       </div>
     </section>
 
     <section class="section" id="research">
-      <h2>Research</h2>
-      <p>Current focus: cuffless blood pressure estimation using PPG signals.</p>
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Research</div>
+          <h2>Focused on cuffless BP estimation and wearable AI.</h2>
+        </div>
+        <p>AI/ML applied to physiological signals and resource-constrained healthcare devices.</p>
+      </div>
 
-      <div class="card" style="margin-top:14px;">
-        <h3>Current work</h3>
-        <ul class="list">
-          <li>Segmentation + quality checks for physiological time-series</li>
-          <li>Waveform morphology feature extraction + feature table creation</li>
-          <li>Feature selection experiments to identify informative predictors</li>
-          <li>Baseline regression modeling and iterative improvement cycles</li>
-          <li>Clean experiment organization for review and repeatability</li>
-        </ul>
+      <div class="grid cols2">
+        <div class="card reveal" style="--delay:40ms">
+          <h3>Current research themes</h3>
+          <ul class="list">
+            <li>PPG signal preprocessing, windowing, and feature extraction</li>
+            <li>Machine learning models for SBP, DBP, and MAP estimation</li>
+            <li>Float32 and Int8 model comparison for edge deployment constraints</li>
+            <li>Calibration, dataset bias, subject leakage, and clinical validation limitations</li>
+            <li>Survey writing on cuffless BP methods, validation, and clinical translation</li>
+          </ul>
+        </div>
+
+        <div class="card reveal" style="--delay:90ms">
+          <h3>Research direction</h3>
+          <p>I am interested in AI systems that move beyond benchmark accuracy and address real-world reliability, interpretability, and deployment constraints in healthcare and wearable sensing.</p>
+          <div class="chips"><span class="chip">Healthcare AI</span><span class="chip">Wearable sensing</span><span class="chip">Biomedical signals</span><span class="chip">Reliable ML</span></div>
+        </div>
       </div>
     </section>
 
     <section class="section" id="skills">
-      <h2>Skills</h2>
-      <div class="grid cols2" style="margin-top:14px;">
-        <div class="card">
-          <h3>ML + data</h3>
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Skills</div>
+          <h2>Tools and methods aligned to your target profile.</h2>
+        </div>
+        <p>Skills that support the story the projects are telling.</p>
+      </div>
+
+      <div class="grid cols2">
+        <div class="card reveal" style="--delay:40ms">
+          <h3>AI/ML + data</h3>
           <div class="chips">
-            <span class="chip">Regression</span>
-            <span class="chip">Classification</span>
-            <span class="chip">Feature engineering</span>
-            <span class="chip">Feature selection</span>
-            <span class="chip">Cross-validation</span>
-            <span class="chip">Error analysis</span>
-            <span class="chip">Time-series</span>
-            <span class="chip">Signal preprocessing</span>
+            <span class="chip">Artificial Intelligence</span><span class="chip">Machine Learning</span><span class="chip">Regression</span><span class="chip">Classification</span><span class="chip">Feature engineering</span><span class="chip">Model evaluation</span><span class="chip">Error analysis</span><span class="chip">Data analysis</span>
           </div>
         </div>
-        <div class="card">
+
+        <div class="card reveal" style="--delay:90ms">
+          <h3>Biomedical + signal processing</h3>
+          <div class="chips">
+            <span class="chip">Biomedical Signal Processing</span><span class="chip">PPG Signal Processing</span><span class="chip">Cuffless BP Estimation</span><span class="chip">Time-series</span><span class="chip">Windowing</span><span class="chip">Filtering</span><span class="chip">Wearable sensing</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="--delay:40ms">
           <h3>Tools + languages</h3>
           <div class="chips">
-            <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MATLAB</span><span class="chip">C</span>
-            <span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">OpenCV</span>
-            <span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Jupyter</span>
+            <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">SQL</span><span class="chip">C</span><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Jupyter Notebook</span><span class="chip">GitHub</span>
+          </div>
+        </div>
+
+        <div class="card reveal" style="--delay:90ms">
+          <h3>Edge AI + research</h3>
+          <div class="chips">
+            <span class="chip">TinyML</span><span class="chip">Edge Impulse</span><span class="chip">Model quantization</span><span class="chip">Embedded Systems</span><span class="chip">Technical Writing</span><span class="chip">Research</span><span class="chip">Presentation Skills</span>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="grid cols2" style="margin-top:14px;">
-        <div class="card">
-          <h3>Engineering practices</h3>
-          <div class="chips">
-            <span class="chip">Documentation</span>
-            <span class="chip">Structured outputs</span>
-            <span class="chip">Reproducible runs</span>
-            <span class="chip">Readable code</span>
-          </div>
+    <section class="section" id="education">
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Education</div>
+          <h2>Academic background.</h2>
         </div>
-        <div class="card">
-          <h3>Currently learning</h3>
-          <div class="chips">
-            <span class="chip">PyTorch</span>
-            <span class="chip">TensorFlow</span>
-            <span class="chip">FastAPI</span>
-            <span class="chip">Docker</span>
-            <span class="chip">AWS</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="timeline">
+          <div class="timelineItem">
+            <strong>Master of Science in Computer Engineering</strong>
+            <span>The University of Texas at Dallas</span>
+            <span>Focus: Artificial Intelligence, Machine Learning, TinyML, Biomedical Signal Processing, Embedded Systems</span>
+          </div>
+          <div class="timelineItem">
+            <strong>Bachelor of Technology in Artificial Intelligence and Machine Learning</strong>
+            <span>Undergraduate project work included computer vision and applied machine learning.</span>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="certifications">
-      <h2>Certifications</h2>
-      <div class="card" style="margin-top:14px;">
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Certifications</div>
+          <h2>Certifications.</h2>
+        </div>
+      </div>
+
+      <div class="card reveal">
         <ul class="list">
           <li>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</li>
-          <li>Crash Course on Python (Coursera, 2022)</li>
-          <li>MERN Full Stack Guide (Udemy)</li>
-          <li>iOS & Swift – The Complete iOS App Development Bootcamp (Udemy)</li>
-          <li>Deep Learning Specialization (Coursera)</li>
-          <li>Machine Learning Specialization (Coursera)</li>
-          <li>TensorFlow Developer Certificate</li>
-          <li>AWS Certified Cloud Practitioner</li>
-          <li>Microsoft Azure AI Fundamentals (AI-900)</li>
-          <li>Google Data Analytics Professional Certificate</li>
+          <li>Crash Course on Python — Coursera</li>
+          <li>MERN Full Stack Guide — Udemy</li>
+          <li>iOS &amp; Swift: The Complete iOS App Development Bootcamp — Udemy</li>
+          <li>Deep Learning Specialization — Coursera</li>
+          <li>Machine Learning Specialization — Coursera</li>
         </ul>
       </div>
     </section>
 
     <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p>Fastest way: email.</p>
-
-      <div class="card" style="margin-top:14px;">
-        <div class="row">
-          <div>
-            <div class="meta" style="margin:0 0 6px;">Email</div>
-            <div style="font-weight:400;">potailkarthikashalini@gmail.com</div>
-          </div>
-          <a class="btn primary" href="https://mail.google.com/mail/?view=cm&to=potailkarthikashalini@gmail.com" target="_blank" rel="noreferrer noopener">Open Gmail</a>
+      <div class="sectionHead reveal">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>Let's connect.</h2>
         </div>
-        <div class="divider"></div>
-        <div class="row" style="margin-top:14px;">
-          <div>
-            <div class="meta" style="margin:0 0 6px;">LinkedIn</div>
-            <div style="font-weight:400;">linkedin.com/in/karthika-shalini</div>
+      </div>
+
+      <div class="card reveal">
+        <div class="contactCard">
+          <div class="contactItem">
+            <div class="label">Email</div>
+            <div class="value">shalinipotail@gmail.com</div>
+            <div class="cta" style="margin-top:14px"><a class="btn primary" href="mailto:shalinipotail@gmail.com">Send email</a></div>
           </div>
-          <a class="btn" href="https://www.linkedin.com/in/karthika-shalini/" target="_blank" rel="noreferrer noopener">Open LinkedIn</a>
+          <div class="contactItem">
+            <div class="label">LinkedIn</div>
+            <div class="value">linkedin.com/in/shalinipotail</div>
+            <div class="cta" style="margin-top:14px"><a class="btn" href="https://www.linkedin.com/in/shalinipotail" target="_blank" rel="noreferrer noopener">Open LinkedIn</a></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <div class="footer">
-      <div>© <span id="y"></span> Karthika Shalini Potail</div>
-      <div class="small">GitHub Pages</div>
-    </div>
+    <footer class="footer">
+      <div>© <span id="y"></span> Shalini Potail</div>
+      <div>PPG · TinyML · Wearable Healthcare AI</div>
+    </footer>
   </div>
 
   <div class="modalOverlay" id="overlay" aria-hidden="true">
@@ -596,44 +726,47 @@
     document.getElementById("y").textContent = new Date().getFullYear();
 
     const modalContent = {
-      ppg: {
-        title: "Cuffless blood pressure estimation (PPG)",
+      tinyml: {
+        title: "TinyML-based blood pressure monitoring from PPG",
         blocks: [
-          { label: "Focus", value: "Time-series preprocessing, morphology feature extraction, and regression baselines for SBP/DBP estimation." },
-          { label: "Pipeline", value: "Segmentation → filtering/normalization → feature extraction → feature selection → baseline regressors → structured reporting." },
-          { label: "Outputs", value: "Saved feature tables, plots, run summaries, and iteration notes for consistent comparison." }
+          { label: "Full title", value: "TinyML-Based Continuous Blood Pressure Monitoring from PPG Signals for Resource-Constrained Devices" },
+          { label: "Focus", value: "Cuffless blood pressure estimation using PPG signals, lightweight ML models, quantization, and edge deployment readiness." },
+          { label: "Pipeline", value: "PPG windowing → preprocessing → feature extraction → model training → Float32/Int8 comparison → deployment-oriented evaluation." },
+          { label: "Skills used", value: "Python, MATLAB, signal processing, feature extraction, model evaluation, quantization, Edge Impulse, TinyML." }
+        ]
+      },
+      survey: {
+        title: "Survey on continuous cuffless BP monitoring using PPG",
+        blocks: [
+          { label: "Full title", value: "Continuous Cuffless Blood Pressure Monitoring Using PPG: A Critical Survey of Methods, Validation, and Clinical Limitations" },
+          { label: "Focus", value: "Critical review of PPG-based cuffless blood pressure estimation as a measurement problem, not just a regression problem." },
+          { label: "Topics", value: "PPG morphology, PAT/PTT, ML and deep learning methods, datasets, calibration, subject leakage, motion artifacts, validation standards, and clinical translation." },
+          { label: "Status", value: "In progress." }
         ]
       },
       cnn: {
-        title: "Face mask detection (CNN)",
+        title: "Face mask detection",
         blocks: [
-          { label: "Focus", value: "Image preprocessing, augmentation strategies, and CNN training/validation workflow." },
-          { label: "Workflow", value: "Dataset prep → augmentation → training runs → validation checks → organized artifacts." },
-          { label: "Outputs", value: "Training logs and structured run folders." }
-        ]
-      },
-      ml: {
-        title: "Early disease prediction (ML)",
-        blocks: [
-          { label: "Focus", value: "Structured data preprocessing, EDA, feature engineering, and multi-model comparisons." },
-          { label: "Workflow", value: "Cleaning → EDA → feature engineering → model training → consistent evaluation scripts." },
-          { label: "Outputs", value: "EDA summaries, feature tables, and comparison reports for models." }
+          { label: "Focus", value: "Image preprocessing, augmentation, CNN training, validation workflow, and experiment organization." },
+          { label: "Workflow", value: "Dataset preparation → preprocessing → training → validation checks → organized outputs." },
+          { label: "Skills used", value: "Python, OpenCV, CNNs, deep learning, image classification." }
         ]
       },
       iot: {
-        title: "Smart Farmer (IoT + cloud analytics)",
+        title: "Smart Farmer",
         blocks: [
-          { label: "Focus", value: "IoT data integration, cloud database workflows, and analytics-driven monitoring." },
-          { label: "Workflow", value: "Device data → ingestion → storage → analysis scripts → monitoring workflows." },
-          { label: "Outputs", value: "Data workflows, scripts, and documentation for the monitoring pipeline." }
+          { label: "Focus", value: "IoT data integration, cloud database workflows, and analytics-driven monitoring for agriculture." },
+          { label: "Workflow", value: "Device data → ingestion → cloud storage → monitoring and analysis workflow." },
+          { label: "Skills used", value: "IBM Watson, Node-RED, Cloudant DB, Python, IoT workflows." }
         ]
       },
       contact: {
         title: "Contact",
         blocks: [
-          { label: "Email", value: "potailkarthikashalini@gmail.com" },
-          { label: "LinkedIn", value: "linkedin.com/in/karthika-shalini" },
-          { label: "Preferred", value: "Email for fastest response." }
+          { label: "Name", value: "Shalini Potail" },
+          { label: "Email", value: "shalinipotail@gmail.com" },
+          { label: "LinkedIn", value: "linkedin.com/in/shalinipotail" },
+          { label: "Preferred", value: "Email or LinkedIn for fastest response." }
         ]
       }
     };
@@ -655,47 +788,189 @@
     function openModal(key){
       const data = modalContent[key];
       if(!data) return;
-
       modalTitle.textContent = data.title;
       modalBody.innerHTML = "";
-
       const kv = document.createElement("div");
       kv.className = "kv";
-
       data.blocks.forEach(b => {
         const k = document.createElement("div");
         k.className = "k";
         k.innerHTML = `<div class="label">${escapeHtml(b.label)}</div><div class="value">${escapeHtml(b.value)}</div>`;
         kv.appendChild(k);
       });
-
       modalBody.appendChild(kv);
-
-      overlay.style.display = "flex";
+      overlay.classList.add("show");
       overlay.setAttribute("aria-hidden", "false");
       closeModalBtn.focus();
     }
 
     function closeModal(){
-      overlay.style.display = "none";
+      overlay.classList.remove("show");
       overlay.setAttribute("aria-hidden", "true");
     }
 
     window.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && overlay.style.display === "flex") closeModal();
+      if(e.key === "Escape" && overlay.classList.contains("show")) closeModal();
     });
-
-    overlay.addEventListener("click", (e) => {
-      if(e.target === overlay) closeModal();
-    });
-
+    overlay.addEventListener("click", (e) => { if(e.target === overlay) closeModal(); });
     closeModalBtn.addEventListener("click", closeModal);
-
     document.querySelectorAll("[data-modal]").forEach(btn => {
       btn.addEventListener("click", () => openModal(btn.getAttribute("data-modal")));
     });
-
     document.getElementById("openContact").addEventListener("click", () => openModal("contact"));
+
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("pointermove", (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+        card.style.setProperty("--my", `${e.clientY - rect.top}px`);
+      });
+    });
+
+    // Animated PPG pulse line: redraw dash offset to look like a live trace, plus a soft glow filter
+    const pulsePath = document.getElementById("pulsePath");
+    const bpmLabel = document.getElementById("bpmLabel");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(pulsePath && !reduceMotion){
+      const len = pulsePath.getTotalLength();
+      pulsePath.style.strokeDasharray = len;
+      pulsePath.style.strokeDashoffset = len;
+      let start = null;
+      const duration = 2600;
+      function animatePulse(ts){
+        if(start === null) start = ts;
+        const elapsed = (ts - start) % duration;
+        const progress = elapsed / duration;
+        pulsePath.style.strokeDashoffset = len * (1 - progress);
+        requestAnimationFrame(animatePulse);
+      }
+      requestAnimationFrame(animatePulse);
+      let bpm = 72;
+      setInterval(() => {
+        bpm = 70 + Math.round(Math.random() * 6);
+        bpmLabel.textContent = bpm + " BPM";
+      }, 2600);
+    }
+
+    // Sakura petals ambient background
+    if(!reduceMotion){
+      const canvas = document.getElementById("petals");
+      const ctx = canvas.getContext("2d");
+      let W, H, petals;
+      const isSmall = window.innerWidth < 720;
+      const count = isSmall ? 12 : 22;
+
+      function resize(){
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+      function makePetal(){
+        return {
+          x: Math.random() * W,
+          y: Math.random() * -H,
+          r: 4 + Math.random() * 5,
+          speedY: 0.35 + Math.random() * 0.55,
+          speedX: (Math.random() - 0.5) * 0.6,
+          rot: Math.random() * Math.PI * 2,
+          rotSpeed: (Math.random() - 0.5) * 0.02,
+          hue: Math.random() > 0.5 ? "rgba(255,140,180," : "rgba(150,220,255,",
+          alpha: 0.25 + Math.random() * 0.35
+        };
+      }
+      function init(){
+        resize();
+        petals = Array.from({length: count}, makePetal);
+      }
+      function drawPetal(p){
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.r, p.r * 0.6, 0, 0, Math.PI * 2);
+        ctx.fillStyle = p.hue + p.alpha + ")";
+        ctx.fill();
+        ctx.restore();
+      }
+      function tick(){
+        ctx.clearRect(0, 0, W, H);
+        petals.forEach(p => {
+          p.y += p.speedY;
+          p.x += p.speedX;
+          p.rot += p.rotSpeed;
+          if(p.y > H + 20){
+            p.y = -20;
+            p.x = Math.random() * W;
+          }
+          drawPetal(p);
+        });
+        requestAnimationFrame(tick);
+      }
+      window.addEventListener("resize", resize);
+      init();
+      requestAnimationFrame(tick);
+    }
+
+    // ---------------------------------------------------------------
+    // Visitor notification (optional) — emails you when someone opens
+    // this page, throttled to once per visitor per day so refreshes
+    // and repeat visits don't spam your inbox or burn your free quota.
+    //
+    // Setup (takes ~3 minutes, no cost for normal portfolio traffic):
+    //   1. Create a free account at https://www.emailjs.com
+    //   2. Add an Email Service (e.g. connect your Gmail) -> copy its Service ID
+    //   3. Create an Email Template with variables {{page_url}}, {{referrer}},
+    //      {{visit_time}} -> copy its Template ID
+    //   4. Account -> General -> copy your Public Key
+    //   5. Paste all three values into the CONFIG object below
+    //
+    // Until you fill in real IDs below, this silently does nothing.
+    // ---------------------------------------------------------------
+    (function setupVisitNotifications(){
+      const CONFIG = {
+        publicKey: "YOUR_EMAILJS_PUBLIC_KEY",
+        serviceId: "YOUR_EMAILJS_SERVICE_ID",
+        templateId: "YOUR_EMAILJS_TEMPLATE_ID",
+      };
+
+      const isConfigured =
+        !CONFIG.publicKey.startsWith("YOUR_") &&
+        !CONFIG.serviceId.startsWith("YOUR_") &&
+        !CONFIG.templateId.startsWith("YOUR_");
+
+      if(!isConfigured) return;
+
+      const THROTTLE_KEY = "portfolio_visit_notified_on";
+      const today = new Date().toDateString();
+      if(localStorage.getItem(THROTTLE_KEY) === today) return;
+
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+      script.onload = function(){
+        try {
+          emailjs.init({ publicKey: CONFIG.publicKey });
+          emailjs.send(CONFIG.serviceId, CONFIG.templateId, {
+            page_url: window.location.href,
+            referrer: document.referrer || "direct / unknown",
+            visit_time: new Date().toLocaleString(),
+          });
+          localStorage.setItem(THROTTLE_KEY, today);
+        } catch (err) {
+          console.warn("Visit notification failed:", err);
+        }
+      };
+      document.body.appendChild(script);
+    })();
   </script>
 </body>
 </html>
