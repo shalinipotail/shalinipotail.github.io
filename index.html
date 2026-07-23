@@ -3,29 +3,65 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shalini Potail | AI/ML Portfolio</title>
-<meta name="description" content="AI/ML portfolio for Shalini Potail, Computer Engineering graduate student at The University of Texas at Dallas focused on TinyML, biomedical signal processing, PPG, and wearable healthcare AI." />
-<meta name="theme-color" content="#090c14" />
+<title>Karthika Potail | AI/ML Researcher · TinyML · Edge AI</title>
+<meta name="description" content=" Portfolio of Karthika Potail, an AI/ML researcher and M.S. Computer Engineering graduate from The University of Texas at Dallas focused on TinyML, Edge AI, continuous health monitoring, intelligent retrieval, and machine learning systems." />
+<meta name="theme-color" content="#06140F" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Karthika Potail",
+  "alternateName": ["Karthika Shalini Potail", "Shalini Potail"],
+  "url": "https://shalinipotail.github.io/",
+  "jobTitle": "AI/ML Researcher",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "The University of Texas at Dallas"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/shalinipotail",
+    "https://github.com/shalinipotail"
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "TinyML",
+    "Edge AI",
+    "Continuous Health Monitoring",
+    "Cuffless Blood Pressure Estimation",
+    "PPG",
+    "ECG",
+    "RAG",
+    "Vector Search"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --bg:#090c14;
-    --bg2:#0e1322;
-    --text:#eef2ff;
-    --muted:#93a1c2;
-    --soft:#cdd8f2;
-    --line:rgba(200,215,255,.14);
-    --line2:rgba(200,215,255,.22);
-    --panel:rgba(180,200,255,.055);
-    --panel2:rgba(180,200,255,.09);
-    --cyan:#5eead4;
-    --pink:#ff7aa8;
-    --violet:#a78bfa;
-    --gold:#ffd166;
-    --shadow:0 24px 90px rgba(0,0,0,.5);
-    --radius:20px;
+    --bg:#06140F;
+    --bg2:#0B1F19;
+    --panel:#10231D;
+    --panel2:#15362B;
+    --text:#f7f8ff;
+    --soft:#dce4ff;
+    --muted:#A9BFB6;
+    --line:rgba(222,230,255,.13);
+    --line2:rgba(222,230,255,.24);
+
+    --cyan:#5EEAD4;
+    --mint:#A7F3D0;
+    --violet:#C9B57A;
+    --rose:#F2C879;
+    --gold:#F6D58D;
+
+    --shadow:0 26px 100px rgba(0,0,0,.55);
+    --radius:24px;
     --ease:cubic-bezier(.2,.8,.2,1);
     --font-display:'Sora', ui-sans-serif, system-ui, sans-serif;
     --font-mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -38,14 +74,13 @@
     font-family:var(--font-display);
     color:var(--text);
     line-height:1.6;
-    background:
-      radial-gradient(900px 560px at 14% 4%, rgba(255,122,168,.14), transparent 62%),
-      radial-gradient(820px 560px at 88% 10%, rgba(94,234,212,.12), transparent 60%),
-      radial-gradient(780px 520px at 50% 100%, rgba(167,139,250,.10), transparent 60%),
-      linear-gradient(180deg, rgba(255,255,255,.03), transparent 28%),
-      var(--bg);
     min-height:100vh;
     overflow-x:hidden;
+    background:
+      radial-gradient(1000px 760px at 12% 6%, rgba(94,234,212,.18), transparent 55%),
+      radial-gradient(900px 660px at 88% 10%, rgba(242,200,121,.15), transparent 58%),
+      radial-gradient(900px 600px at 55% 100%, rgba(167,243,208,.10), transparent 62%),
+      linear-gradient(180deg, #06140F 0%, #0A1D18 38%, #050C0A 100%);
     position:relative;
   }
 
@@ -54,87 +89,169 @@
     position:fixed;
     inset:0;
     pointer-events:none;
+    z-index:-5;
     background-image:
-      linear-gradient(rgba(200,215,255,.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200,215,255,.025) 1px, transparent 1px);
-    background-size:72px 72px;
-    mask-image:linear-gradient(to bottom, rgba(0,0,0,.6), transparent 72%);
-    z-index:-2;
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+    background-size:74px 74px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,.65), transparent 74%);
   }
 
-  #petals{position:fixed; inset:0; z-index:-1; pointer-events:none;}
+  body:after{
+    content:"";
+    position:fixed;
+    inset:-25% -10%;
+    z-index:-4;
+    pointer-events:none;
+    background:
+      conic-gradient(from 210deg at 50% 50%, transparent, rgba(110,231,255,.08), transparent, rgba(184,167,255,.09), transparent, rgba(255,143,184,.06), transparent);
+    filter:blur(50px);
+    animation:auroraRotate 24s linear infinite;
+    opacity:.86;
+  }
+
+  @keyframes auroraRotate{
+    from{transform:rotate(0deg) scale(1.02)}
+    to{transform:rotate(360deg) scale(1.02)}
+  }
 
   a{color:inherit; text-decoration:none}
   p{margin:0}
-  .wrap{max-width:1160px; margin:0 auto; padding:20px 20px 72px; position:relative; z-index:1}
+  .wrap{max-width:1180px; margin:0 auto; padding:20px 20px 72px; position:relative; z-index:2}
+
+  #constellation{
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    pointer-events:none;
+    opacity:.65;
+  }
+
+  .ambient-orb{
+    position:fixed;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:-2;
+    filter:blur(4px);
+    opacity:.23;
+  }
+  .orb1{width:430px; height:430px; left:-120px; top:160px; background:radial-gradient(circle, rgba(110,231,255,.34), transparent 64%); animation:floatA 13s ease-in-out infinite}
+  .orb2{width:520px; height:520px; right:-170px; top:380px; background:radial-gradient(circle, rgba(184,167,255,.34), transparent 64%); animation:floatB 16s ease-in-out infinite}
+  .orb3{width:360px; height:360px; left:42%; bottom:-120px; background:radial-gradient(circle, rgba(119,242,194,.22), transparent 64%); animation:floatC 18s ease-in-out infinite}
+  @keyframes floatA{0%,100%{transform:translate(0,0)} 50%{transform:translate(35px,24px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,42px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0)} 50%{transform:translate(26px,-28px)}}
 
   .topbar{
-    position:sticky; top:0; z-index:50;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    position:sticky;
+    top:0;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
     padding:12px 0 14px;
     backdrop-filter:blur(18px);
   }
-  .topbar:after{
-    content:""; position:absolute; left:-24px; right:-24px; bottom:0; height:1px;
-    background:linear-gradient(90deg, transparent, var(--line), transparent);
+  .topbar:before{
+    content:"";
+    position:absolute;
+    inset:0 -24px;
+    background:linear-gradient(180deg, rgba(9,10,18,.82), rgba(9,10,18,.35));
+    border-bottom:1px solid var(--line);
+    z-index:-1;
   }
 
-  .brand{display:flex; align-items:center; gap:11px; font-weight:700; letter-spacing:-.01em}
+  .brand{display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:-.02em}
   .brandMark{
-    width:36px; height:36px; position:relative;
-    display:grid; place-items:center;
-    background:linear-gradient(135deg, rgba(255,122,168,.28), rgba(94,234,212,.20));
-    border:1px solid var(--line2);
-    clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
     font-family:var(--font-mono);
-    font-size:12px; font-weight:700;
-    box-shadow:0 0 22px rgba(255,122,168,.22);
-    animation:emblemSpin 12s linear infinite;
-  }
-  @keyframes emblemSpin{
-    0%,92%{transform:rotate(0deg)}
-    100%{transform:rotate(360deg)}
+    font-size:12px;
+    font-weight:800;
+    color:#08101b;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,.96), rgba(110,231,255,.88) 48%, rgba(184,167,255,.88));
+    border:1px solid rgba(255,255,255,.44);
+    box-shadow:0 0 34px rgba(110,231,255,.22);
   }
 
   .nav{
-    display:flex; align-items:center; gap:2px; flex-wrap:wrap; justify-content:flex-end;
-    padding:6px; border:1px solid var(--line); border-radius:999px;
-    background:rgba(9,12,20,.5); box-shadow:0 14px 40px rgba(0,0,0,.2);
+    display:flex;
+    align-items:center;
+    gap:3px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    padding:6px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(12,15,26,.58);
+    box-shadow:0 16px 46px rgba(0,0,0,.24);
     font-family:var(--font-mono);
   }
   .nav a{
-    position:relative; color:var(--muted); font-size:12.5px; font-weight:500;
-    padding:8px 12px; border-radius:999px; letter-spacing:.02em;
-    transition:color .25s var(--ease), background .25s var(--ease);
+    color:var(--muted);
+    font-size:12.5px;
+    font-weight:600;
+    padding:8px 12px;
+    border-radius:999px;
+    letter-spacing:.02em;
+    transition:color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease);
   }
-  .nav a:hover{color:var(--text); background:rgba(255,255,255,.07)}
+  .nav a:hover{
+    color:var(--text);
+    background:rgba(255,255,255,.08);
+    transform:translateY(-1px);
+  }
 
-  .vitals{
-    display:inline-flex; align-items:center; gap:7px; font-family:var(--font-mono);
-    font-size:11px; color:var(--cyan); letter-spacing:.06em;
+  .liveTag{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--mint);
+    letter-spacing:.06em;
   }
-  .vitals .dot{
-    width:7px; height:7px; border-radius:999px; background:var(--cyan);
-    box-shadow:0 0 12px rgba(94,234,212,.9);
-    animation:pulseDot 1.15s ease-in-out infinite;
+  .liveTag .dot{
+    width:7px;
+    height:7px;
+    border-radius:999px;
+    background:var(--mint);
+    box-shadow:0 0 14px rgba(119,242,194,.9);
+    animation:pulseDot 1.25s ease-in-out infinite;
   }
   @keyframes pulseDot{
-    0%,100%{opacity:.4; transform:scale(.8)}
-    50%{opacity:1; transform:scale(1.15)}
+    0%,100%{opacity:.42; transform:scale(.82)}
+    50%{opacity:1; transform:scale(1.12)}
   }
 
-  .hero{position:relative; display:grid; grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr); gap:28px; align-items:center; min-height:620px; padding:64px 0 40px}
+  .hero{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);
+    gap:28px;
+    align-items:center;
+    min-height:690px;
+    padding:72px 0 58px;
+  }
 
-  h1,h2,h3{margin:0; letter-spacing:-.03em; line-height:1.08; font-family:var(--font-display)}
-  h1{font-size:clamp(38px, 6.2vw, 74px); margin-top:20px; max-width:820px; font-weight:800}
-  h2{font-size:clamp(28px, 3.8vw, 42px); font-weight:750}
-  h3{font-size:18px; letter-spacing:-.02em; font-weight:700}
+  h1,h2,h3{margin:0; letter-spacing:-.035em; line-height:1.08; font-family:var(--font-display)}
+  h1{font-size:clamp(42px, 6.2vw, 82px); margin-top:20px; max-width:920px; font-weight:800}
+  h2{font-size:clamp(28px, 3.6vw, 44px); font-weight:780}
+  h3{font-size:18px; letter-spacing:-.02em; font-weight:750}
 
   .gradientText{
-    background:linear-gradient(120deg, #ffffff 10%, var(--cyan) 45%, var(--pink) 78%);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
-    background-size:200% 100%;
-    animation:shimmerText 7s ease-in-out infinite;
+    background:linear-gradient(120deg, #ffffff 2%, #e7ecff 24%, var(--cyan) 52%, var(--violet) 78%, #ffffff 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    background-size:220% 100%;
+    animation:shimmerText 8s ease-in-out infinite;
+    text-shadow:0 0 42px rgba(110,231,255,.18);
   }
   @keyframes shimmerText{
     0%,100%{background-position:0% 50%}
@@ -142,166 +259,501 @@
   }
 
   .kicker{
-    display:inline-flex; align-items:center; gap:9px; width:max-content; max-width:100%;
-    padding:8px 13px; border-radius:999px; border:1px solid var(--line);
-    background:var(--panel); color:var(--soft); font-family:var(--font-mono);
-    font-size:12px; font-weight:500; letter-spacing:.02em;
-    box-shadow:0 18px 60px rgba(0,0,0,.2);
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    width:max-content;
+    max-width:100%;
+    padding:8px 13px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.055);
+    color:var(--soft);
+    font-family:var(--font-mono);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.03em;
   }
-  .kicker span{width:8px; height:8px; border-radius:999px; background:var(--pink); box-shadow:0 0 20px rgba(255,122,168,.8); animation:pulseDot 1.4s ease-in-out infinite}
+  .kicker span{
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    background:var(--rose);
+    box-shadow:0 0 18px rgba(255,143,184,.75);
+  }
 
-  .subtitle{color:var(--muted); font-size:17.5px; max-width:720px; margin-top:20px}
-  .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
+  .subtitle{
+    color:var(--soft);
+    font-size:17.5px;
+    max-width:760px;
+    margin-top:20px;
+  }
+
+  .heroStats{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:22px;
+  }
+  .heroStat{
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(255,255,255,.045);
+    padding:10px 12px;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--muted);
+  }
+  .heroStat strong{color:var(--text); font-weight:800}
+
+  .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:28px}
 
   .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:9px;
-    border:1px solid var(--line2); border-radius:999px; padding:11px 18px;
-    color:var(--text); background:var(--panel); font-size:13.5px; font-weight:600;
-    cursor:pointer; position:relative; overflow:hidden;
-    box-shadow:0 12px 36px rgba(0,0,0,.2);
-    transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    border:1px solid var(--line2);
+    border-radius:999px;
+    padding:11px 18px;
+    color:var(--text);
+    background:rgba(255,255,255,.055);
+    font-size:13.5px;
+    font-weight:700;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 14px 38px rgba(0,0,0,.20);
+    transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
   }
   .btn:before{
-    content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
-    transform:skewX(-18deg); transition:left .55s var(--ease);
+    content:"";
+    position:absolute;
+    top:0;
+    left:-60%;
+    width:40%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.32), transparent);
+    transform:skewX(-18deg);
+    transition:left .55s var(--ease);
   }
   .btn:hover:before{left:130%}
-  .btn:hover{transform:translateY(-3px); border-color:rgba(94,234,212,.5); box-shadow:0 18px 48px rgba(0,0,0,.32)}
-  .btn.primary{border-color:rgba(255,122,168,.5); background:linear-gradient(135deg, rgba(255,122,168,.25), rgba(94,234,212,.18))}
+  .btn:hover{
+    transform:translateY(-3px);
+    border-color:rgba(110,231,255,.52);
+    box-shadow:0 20px 56px rgba(0,0,0,.32);
+  }
+  .btn.primary{
+    color:#07101b;
+    border-color:rgba(255,255,255,.55);
+    background:linear-gradient(135deg, rgba(255,255,255,.95), rgba(110,231,255,.85), rgba(184,167,255,.82));
+  }
   .btn.ghost{background:transparent; box-shadow:none}
 
-  .pulseBanner{margin-top:34px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.03); padding:10px 14px}
+  .pulseBanner{
+    margin-top:34px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:rgba(255,255,255,.04);
+    padding:10px 14px;
+    backdrop-filter:blur(14px);
+  }
   .pulseBanner svg{display:block; width:100%; height:56px}
-  .pulseLabel{display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:10.5px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-top:6px}
+  .pulseLabel{
+    display:flex;
+    justify-content:space-between;
+    font-family:var(--font-mono);
+    font-size:10.5px;
+    color:var(--muted);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-top:6px;
+  }
 
-  .heroPanel{
-    position:relative; min-height:460px; border:1px solid var(--line); border-radius:30px; padding:18px;
-    background:linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.03)), rgba(255,255,255,.04);
-    box-shadow:var(--shadow); overflow:hidden;
-    transform:perspective(1000px) rotateY(-5deg) rotateX(2deg);
+  .labPanel{
+    position:relative;
+    min-height:500px;
+    border:1px solid var(--line);
+    border-radius:32px;
+    padding:18px;
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.035)),
+      rgba(14,18,31,.48);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    transform:perspective(1000px) rotateY(-3deg) rotateX(1deg);
     transition:transform .7s var(--ease), border-color .35s var(--ease);
+    backdrop-filter:blur(18px);
   }
-  .heroPanel:hover{transform:perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-4px); border-color:rgba(94,234,212,.32)}
-  .heroPanel:before{
-    content:""; position:absolute; inset:-35% -20% auto auto; width:280px; height:280px; border-radius:50%;
-    background:radial-gradient(circle, rgba(255,122,168,.28), transparent 68%); filter:blur(12px);
+  .labPanel:hover{
+    transform:perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-4px);
+    border-color:rgba(110,231,255,.34);
+  }
+  .labPanel:before{
+    content:"";
+    position:absolute;
+    inset:-36% -22% auto auto;
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(110,231,255,.16), transparent 68%);
+    filter:blur(12px);
+  }
+  .labPanel:after{
+    content:"";
+    position:absolute;
+    left:18px;
+    right:18px;
+    top:70px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(110,231,255,.3), transparent);
   }
 
-  .heroCard{position:relative; border:1px solid var(--line); border-radius:24px; background:rgba(9,12,20,.55); backdrop-filter:blur(16px); padding:22px; min-height:100%}
+  .labCard{
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:26px;
+    background:rgba(9,10,18,.48);
+    backdrop-filter:blur(16px);
+    padding:22px;
+    min-height:100%;
+    overflow:hidden;
+  }
+  .radar{
+    position:absolute;
+    right:-70px;
+    top:-50px;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    border:1px solid rgba(110,231,255,.15);
+    background:
+      radial-gradient(circle, transparent 30%, rgba(110,231,255,.06) 31%, transparent 32%),
+      radial-gradient(circle, transparent 50%, rgba(184,167,255,.06) 51%, transparent 52%),
+      conic-gradient(from 0deg, rgba(110,231,255,.20), transparent 35%);
+    animation:radarSpin 9s linear infinite;
+    opacity:.75;
+  }
+  @keyframes radarSpin{to{transform:rotate(360deg)}}
+
   .profileTop{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:24px}
   .avatar{
-    width:56px; height:56px; display:grid; place-items:center; position:relative;
-    background:linear-gradient(135deg, rgba(255,122,168,.35), rgba(94,234,212,.22));
-    border:1px solid var(--line2); font-weight:800; font-size:17px; font-family:var(--font-mono);
-    clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    width:58px;
+    height:58px;
+    display:grid;
+    place-items:center;
+    position:relative;
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.13), rgba(110,231,255,.08));
+    border:1px solid var(--line2);
+    color:var(--cyan);
+    font-weight:800;
+    font-size:17px;
+    font-family:var(--font-mono);
+    border-radius:18px;
+    box-shadow:0 0 28px rgba(110,231,255,.12);
   }
-  .avatar:after{
-    content:""; position:absolute; inset:-6px; border:1px solid rgba(94,234,212,.4);
-    clip-path:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    animation:ringPulse 2.4s ease-in-out infinite;
+  .status{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-size:11.5px;
+    font-family:var(--font-mono);
+    color:#dffdf5;
+    border:1px solid rgba(119,242,194,.22);
+    background:rgba(119,242,194,.055);
+    padding:7px 10px;
+    border-radius:999px;
   }
-  @keyframes ringPulse{
-    0%,100%{opacity:.25; transform:scale(1)}
-    50%{opacity:.7; transform:scale(1.08)}
+  .status:before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--mint);
+    box-shadow:0 0 14px rgba(119,242,194,.75);
   }
-  .status{display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-family:var(--font-mono); color:#a8f0ca; border:1px solid rgba(168,240,202,.2); background:rgba(168,240,202,.06); padding:7px 10px; border-radius:999px}
-  .status:before{content:""; width:7px; height:7px; border-radius:50%; background:#a8f0ca; box-shadow:0 0 16px rgba(168,240,202,.8)}
 
-  .profileName{font-size:28px; font-weight:800; letter-spacing:-.03em; line-height:1.05}
+  .profileName{font-size:29px; font-weight:800; letter-spacing:-.035em; line-height:1.05}
   .profileRole{margin-top:8px; color:var(--muted); font-size:13.5px; font-family:var(--font-mono)}
 
   .metrics{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:22px 0}
-  .metric{border:1px solid var(--line); border-radius:16px; padding:13px 10px; background:rgba(255,255,255,.035); text-align:center}
+  .metric{
+    border:1px solid var(--line);
+    border-radius:17px;
+    padding:13px 10px;
+    background:rgba(255,255,255,.04);
+    text-align:center;
+  }
   .metric strong{display:block; font-size:19px; letter-spacing:-.02em; font-family:var(--font-mono); color:var(--cyan)}
   .metric span{display:block; color:var(--muted); font-size:11px; margin-top:3px}
 
   .focusList{display:grid; gap:10px; margin-top:10px}
-  .focusItem{display:flex; align-items:flex-start; gap:10px; color:var(--soft); font-size:13.5px; padding:12px; border-radius:16px; background:rgba(255,255,255,.03); border:1px solid var(--line)}
-  .focusItem b{font-weight:700; color:var(--text)}
-  .focusIcon{width:22px; height:22px; border-radius:8px; flex:0 0 auto; display:grid; place-items:center; background:rgba(255,122,168,.14); color:var(--pink); font-size:11px; font-family:var(--font-mono)}
+  .focusItem{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    color:var(--soft);
+    font-size:13.5px;
+    padding:12px;
+    border-radius:16px;
+    background:rgba(255,255,255,.035);
+    border:1px solid var(--line);
+  }
+  .focusItem b{font-weight:800; color:var(--text)}
+  .focusIcon{
+    width:24px;
+    height:24px;
+    border-radius:10px;
+    flex:0 0 auto;
+    display:grid;
+    place-items:center;
+    background:rgba(110,231,255,.07);
+    color:var(--cyan);
+    font-size:11px;
+    font-family:var(--font-mono);
+    border:1px solid rgba(110,231,255,.15);
+  }
 
-  .section{padding:54px 0; scroll-margin-top:90px}
-  .sectionHead{display:flex; justify-content:space-between; align-items:end; gap:18px; margin-bottom:20px}
+  .section{
+    padding:60px 0;
+    scroll-margin-top:90px;
+    position:relative;
+  }
+  .section > *{position:relative}
+  .sectionHead{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:18px;
+    margin-bottom:22px;
+  }
   .sectionHead p{color:var(--muted); max-width:640px; margin-top:9px; font-size:14.5px}
 
   .eyebrow{
-    position:relative; display:inline-flex; align-items:center; color:var(--cyan);
-    text-transform:uppercase; letter-spacing:.18em; font-size:11.5px; font-weight:700;
-    margin-bottom:10px; font-family:var(--font-mono); padding-left:16px;
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    color:var(--cyan);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:11.5px;
+    font-weight:800;
+    margin-bottom:10px;
+    font-family:var(--font-mono);
+    padding-left:16px;
   }
-  .eyebrow:before{content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:10px; height:1.5px; background:var(--cyan); box-shadow:0 0 8px rgba(94,234,212,.8)}
+  .eyebrow:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    width:10px;
+    height:1.5px;
+    background:var(--cyan);
+    box-shadow:0 0 14px rgba(110,231,255,.75);
+  }
 
   .grid{display:grid; gap:16px}
   .cols2{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cols3{grid-template-columns:repeat(3,minmax(0,1fr))}
 
   .card{
-    position:relative; border:1px solid var(--line); border-radius:var(--radius);
-    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-    padding:22px; overflow:hidden; box-shadow:0 18px 60px rgba(0,0,0,.16);
+    position:relative;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.028)),
+      rgba(10,13,22,.52);
+    padding:22px;
+    overflow:hidden;
+    box-shadow:0 20px 70px rgba(0,0,0,.18);
+    backdrop-filter:blur(16px);
     transition:transform .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease);
   }
   .card:before{
-    content:""; position:absolute; inset:0;
-    background:radial-gradient(360px 120px at var(--mx,50%) var(--my,0%), rgba(255,122,168,.14), transparent 58%);
-    opacity:0; transition:opacity .45s var(--ease); pointer-events:none;
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(420px 150px at var(--mx,50%) var(--my,0%), rgba(110,231,255,.12), transparent 58%),
+      linear-gradient(120deg, transparent, rgba(255,255,255,.04), transparent);
+    opacity:0;
+    transition:opacity .45s var(--ease);
+    pointer-events:none;
   }
   .card:after{
-    content:""; position:absolute; width:16px; height:16px; top:10px; right:10px;
-    border-top:1.5px solid transparent; border-right:1.5px solid transparent;
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    top:11px;
+    right:11px;
+    border-top:1.5px solid transparent;
+    border-right:1.5px solid transparent;
     transition:border-color .35s var(--ease);
   }
-  .card:hover{transform:translateY(-7px); border-color:rgba(94,234,212,.34); box-shadow:0 28px 90px rgba(0,0,0,.3)}
+  .card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(110,231,255,.30);
+    box-shadow:0 28px 86px rgba(0,0,0,.30);
+  }
   .card:hover:before{opacity:1}
   .card:hover:after{border-color:var(--cyan)}
   .card > *{position:relative}
   .card p{color:var(--muted); font-size:13.5px; margin-top:10px}
 
+  .featuredCard{
+    min-height:312px;
+  }
+  .featuredCard h3{font-size:22px}
+  .featuredCard .meta{margin-top:10px}
+
   .row{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
   .meta{color:var(--muted); font-size:12.5px; margin-top:8px; font-family:var(--font-mono)}
 
   .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px}
-  .chip{display:inline-flex; align-items:center; gap:6px; color:rgba(238,242,255,.8); font-size:11.5px; font-weight:500; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.055); border:1px solid var(--line); font-family:var(--font-mono)}
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:rgba(247,248,255,.82);
+    font-size:11.5px;
+    font-weight:600;
+    padding:7px 10px;
+    border-radius:999px;
+    background:rgba(255,255,255,.045);
+    border:1px solid var(--line);
+    font-family:var(--font-mono);
+  }
 
-  .pill{display:inline-flex; align-items:center; gap:6px; color:rgba(238,242,255,.82); font-size:11.5px; font-weight:600; padding:7px 10px; border-radius:999px; background:rgba(255,255,255,.05); border:1px solid var(--line2); white-space:nowrap; font-family:var(--font-mono)}
-  .pill.good{color:#a8f0ca; border-color:rgba(168,240,202,.22); background:rgba(168,240,202,.065)}
-  .pill.warn{color:var(--gold); border-color:rgba(255,209,102,.22); background:rgba(255,209,102,.065)}
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:rgba(247,248,255,.86);
+    font-size:11.5px;
+    font-weight:700;
+    padding:7px 10px;
+    border-radius:999px;
+    background:rgba(255,255,255,.045);
+    border:1px solid var(--line2);
+    white-space:nowrap;
+    font-family:var(--font-mono);
+  }
+  .pill.good{color:#d9f7ef; border-color:rgba(119,242,194,.22); background:rgba(119,242,194,.055)}
+  .pill.warn{color:var(--gold); border-color:rgba(245,210,141,.22); background:rgba(245,210,141,.055)}
 
   .projectCard{min-height:288px; display:flex; flex-direction:column; justify-content:space-between}
   .projectCard .btn{margin-top:18px; box-shadow:none}
 
   .list{margin:14px 0 0; padding:0; list-style:none; display:grid; gap:10px}
   .list li{color:var(--muted); font-size:13.5px; padding-left:22px; position:relative}
-  .list li:before{content:""; position:absolute; left:0; top:.7em; width:8px; height:8px; border-radius:999px; background:linear-gradient(135deg, var(--pink), var(--cyan)); box-shadow:0 0 16px rgba(255,122,168,.4)}
+  .list li:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.72em;
+    width:7px;
+    height:7px;
+    border-radius:999px;
+    background:linear-gradient(135deg, var(--cyan), var(--violet));
+    box-shadow:0 0 14px rgba(110,231,255,.42);
+  }
 
   .timeline{display:grid; gap:14px; margin-top:6px}
-  .timelineItem{position:relative; padding:6px 0 6px 20px; border-left:1px solid rgba(94,234,212,.32)}
-  .timelineItem:before{content:""; position:absolute; left:-5px; top:13px; width:9px; height:9px; border-radius:999px; background:var(--cyan); box-shadow:0 0 20px rgba(94,234,212,.7)}
-  .timelineItem strong{display:block; font-weight:700; letter-spacing:-.01em}
+  .timelineItem{position:relative; padding:6px 0 6px 20px; border-left:1px solid rgba(110,231,255,.25)}
+  .timelineItem:before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:13px;
+    width:9px;
+    height:9px;
+    border-radius:999px;
+    background:var(--cyan);
+    box-shadow:0 0 18px rgba(110,231,255,.58);
+  }
+  .timelineItem strong{display:block; font-weight:800; letter-spacing:-.01em}
   .timelineItem span{display:block; color:var(--muted); font-size:12.5px; margin-top:3px}
 
   .contactCard{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-  .contactItem{border:1px solid var(--line); border-radius:20px; padding:18px; background:rgba(255,255,255,.035)}
-  .contactItem .label{font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--muted); font-weight:700; font-family:var(--font-mono)}
-  .contactItem .value{margin-top:8px; word-break:break-word; font-weight:650}
+  .contactItem{
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:18px;
+    background:rgba(255,255,255,.04);
+  }
+  .contactItem .label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    color:var(--muted);
+    font-weight:800;
+    font-family:var(--font-mono);
+  }
+  .contactItem .value{margin-top:8px; word-break:break-word; font-weight:700}
 
-  .footer{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; border-top:1px solid var(--line); margin-top:32px; padding-top:20px; color:var(--muted); font-size:12.5px; font-family:var(--font-mono)}
+  .footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    margin-top:32px;
+    padding-top:20px;
+    color:var(--muted);
+    font-size:12.5px;
+    font-family:var(--font-mono);
+  }
 
-  .modalOverlay{position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(4,6,12,.6); backdrop-filter:blur(10px)}
+  .modalOverlay{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(4,5,11,.66);
+    backdrop-filter:blur(12px);
+  }
   .modalOverlay.show{display:flex; animation:fadeIn .25s var(--ease) both}
-  .modal{width:min(740px,100%); max-height:min(82vh,720px); overflow:auto; border:1px solid var(--line2); border-radius:24px; padding:18px; background:linear-gradient(180deg, rgba(18,22,38,.97), rgba(8,11,20,.97)); box-shadow:0 30px 110px rgba(0,0,0,.6); animation:modalUp .32s var(--ease) both}
+  .modal{
+    width:min(740px,100%);
+    max-height:min(82vh,720px);
+    overflow:auto;
+    border:1px solid var(--line2);
+    border-radius:26px;
+    padding:18px;
+    background:linear-gradient(180deg, rgba(20,24,39,.98), rgba(8,10,18,.98));
+    box-shadow:0 30px 110px rgba(0,0,0,.66);
+    animation:modalUp .32s var(--ease) both;
+  }
   .modalTop{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:4px 4px 14px; border-bottom:1px solid var(--line)}
   .modalTop strong{font-size:15px; letter-spacing:-.01em}
-  .close{border:1px solid var(--line2); background:rgba(255,255,255,.06); color:var(--text); border-radius:999px; padding:9px 14px; font-weight:600; cursor:pointer; font-family:var(--font-mono); font-size:12.5px; transition:transform .2s var(--ease), background .2s var(--ease)}
-  .close:hover{transform:translateY(-1px); background:rgba(255,255,255,.1)}
+  .close{
+    border:1px solid var(--line2);
+    background:rgba(255,255,255,.06);
+    color:var(--text);
+    border-radius:999px;
+    padding:9px 14px;
+    font-weight:700;
+    cursor:pointer;
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    transition:transform .2s var(--ease), background .2s var(--ease);
+  }
+  .close:hover{transform:translateY(-1px); background:rgba(255,255,255,.10)}
   .modalBody{padding-top:14px}
   .kv{display:grid; gap:10px}
-  .k{border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:16px; padding:14px}
-  .k .label{font-size:11px; color:var(--pink); font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-family:var(--font-mono)}
+  .k{border:1px solid var(--line); background:rgba(255,255,255,.04); border-radius:17px; padding:14px}
+  .k .label{font-size:11px; color:var(--cyan); font-weight:800; letter-spacing:.14em; text-transform:uppercase; font-family:var(--font-mono)}
   .k .value{margin-top:7px; color:var(--soft); font-size:13.5px}
 
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s var(--ease), transform .8s var(--ease); transition-delay:var(--delay,0ms)}
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease); transition-delay:var(--delay,0ms)}
   .reveal.in{opacity:1; transform:translateY(0)}
 
   @keyframes fadeIn{from{opacity:0} to{opacity:1}}
@@ -311,12 +763,12 @@
     html{scroll-behavior:auto}
     *, *:before, *:after{animation:none !important; transition:none !important}
     .reveal{opacity:1; transform:none}
-    #petals{display:none}
+    #constellation{display:none}
   }
 
   @media (max-width: 900px){
-    .hero{grid-template-columns:1fr; min-height:auto; padding-top:48px}
-    .heroPanel{transform:none; min-height:auto}
+    .hero{grid-template-columns:1fr; min-height:auto; padding-top:52px}
+    .labPanel{transform:none; min-height:auto}
     .cols3{grid-template-columns:1fr}
     .contactCard{grid-template-columns:1fr}
   }
@@ -326,26 +778,29 @@
     .nav{justify-content:flex-start; border-radius:20px}
     .nav a{padding:7px 10px}
     .cols2{grid-template-columns:1fr}
-    .section{padding:38px 0}
+    .section{padding:42px 0}
     .sectionHead{display:block}
     .metrics{grid-template-columns:1fr}
-    .heroCard{padding:18px}
-    .heroPanel{padding:12px; border-radius:24px}
+    .labCard{padding:18px}
+    .labPanel{padding:12px; border-radius:24px}
   }
 </style>
 </head>
 
 <body>
-  <canvas id="petals"></canvas>
+  <canvas id="constellation"></canvas>
+  <div class="ambient-orb orb1"></div>
+  <div class="ambient-orb orb2"></div>
+  <div class="ambient-orb orb3"></div>
 
   <div class="wrap">
     <div class="topbar">
-      <a class="brand" href="#top" aria-label="Shalini Potail portfolio home">
-        <span class="brandMark">SP</span>
-        <span>Shalini Potail</span>
+      <a class="brand" href="#top" aria-label="Karthika Potail portfolio home">
+        <span class="brandMark">KP</span>
+        <span>Karthika Potail</span>
       </a>
       <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap">
-        <span class="vitals"><span class="dot"></span>SIGNAL: LIVE</span>
+        <span class="liveTag"><span class="dot"></span>PORTFOLIO: LIVE</span>
         <nav class="nav" aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a href="#opensource">Open Source</a>
@@ -359,11 +814,18 @@
 
     <header class="hero" id="top">
       <div class="reveal">
-        <div class="kicker"><span></span>AI/ML • TinyML • Biomedical Signal Processing</div>
-        <h1><span class="gradientText">Building AI for wearable healthcare</span> and real-world physiological signals.</h1>
+        <div class="kicker"><span></span>AI/ML • TinyML • Edge AI</div>
+        <h1><span class="gradientText">Karthika Potail</span><br>building intelligent systems from signals, data, and edge devices.</h1>
         <p class="subtitle">
-          I am a Computer Engineering graduate student at The University of Texas at Dallas, focused on machine learning, TinyML, biomedical signal processing, and edge-ready healthcare AI. My current work explores cuffless blood pressure estimation using PPG signals and the validation challenges behind reliable wearable health monitoring.
+          M.S. Computer Engineering graduate from The University of Texas at Dallas, focused on AI/ML, TinyML, Edge AI, intelligent retrieval, and continuous health monitoring. My current work explores cuffless blood pressure estimation using PPG and ECG signals and the validation challenges behind reliable wearable AI systems.
         </p>
+
+        <div class="heroStats">
+          <span class="heroStat"><strong>IEEE ISVLSI 2026</strong> accepted paper</span>
+          <span class="heroStat"><strong>TinyML</strong> edge-ready workflows</span>
+          <span class="heroStat"><strong>RAG</strong> intelligent retrieval</span>
+        </div>
+
         <div class="cta">
           <button class="btn primary" id="openContact">Contact me</button>
           <a class="btn" href="https://www.linkedin.com/in/shalinipotail" target="_blank" rel="noreferrer noopener">LinkedIn</a>
@@ -374,37 +836,38 @@
           <svg viewBox="0 0 600 60" preserveAspectRatio="none">
             <defs>
               <linearGradient id="pulseGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#ff7aa8"/>
-                <stop offset="55%" stop-color="#5eead4"/>
-                <stop offset="100%" stop-color="#a78bfa"/>
+                <stop offset="0%" stop-color="#ff8fb8"/>
+                <stop offset="45%" stop-color="#6ee7ff"/>
+                <stop offset="100%" stop-color="#b8a7ff"/>
               </linearGradient>
             </defs>
             <path id="pulsePath" d="M0,30 L110,30 L128,8 L142,52 L158,16 L172,30 L230,30 L246,24 L260,36 L276,30 L600,30"
               fill="none" stroke="url(#pulseGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <div class="pulseLabel"><span>PPG · CH01</span><span id="bpmLabel">72 BPM</span></div>
+          <div class="pulseLabel"><span>PPG · ECG · EDGE AI</span><span id="bpmLabel">72 BPM</span></div>
         </div>
       </div>
 
-      <aside class="heroPanel reveal" style="--delay:120ms" aria-label="Profile summary card">
-        <div class="heroCard">
+      <aside class="labPanel reveal" style="--delay:120ms" aria-label="Profile summary card">
+        <div class="labCard">
+          <div class="radar" aria-hidden="true"></div>
           <div class="profileTop">
-            <div class="avatar">SP</div>
+            <div class="avatar">KP</div>
             <div class="status">Open to research &amp; AI/ML roles</div>
           </div>
-          <div class="profileName">Shalini Potail</div>
-          <div class="profileRole">Computer Engineering Graduate Student · UT Dallas</div>
+          <div class="profileName">Karthika Potail</div>
+          <div class="profileRole">M.S. Computer Engineering · UT Dallas</div>
 
           <div class="metrics">
             <div class="metric"><strong>PPG</strong><span>Signal research</span></div>
             <div class="metric"><strong>TinyML</strong><span>Edge focus</span></div>
-            <div class="metric"><strong>AI/ML</strong><span>Healthcare</span></div>
+            <div class="metric"><strong>AI/ML</strong><span>Research</span></div>
           </div>
 
           <div class="focusList">
-            <div class="focusItem"><span class="focusIcon">01</span><span><b>Research:</b> Cuffless blood pressure estimation using wearable PPG signals.</span></div>
+            <div class="focusItem"><span class="focusIcon">01</span><span><b>Research:</b> Cuffless blood pressure estimation using PPG and ECG signals.</span></div>
             <div class="focusItem"><span class="focusIcon">02</span><span><b>Engineering:</b> Preprocessing, feature extraction, model evaluation, quantization, and edge deployment readiness.</span></div>
-            <div class="focusItem"><span class="focusIcon">03</span><span><b>Direction:</b> Reliable, interpretable, and practical AI systems for healthcare applications.</span></div>
+            <div class="focusItem"><span class="focusIcon">03</span><span><b>Direction:</b> Reliable, interpretable, and practical AI systems for real-world applications.</span></div>
           </div>
         </div>
       </aside>
@@ -416,14 +879,14 @@
           <div class="eyebrow">Technical strengths</div>
           <h2>Research depth with practical ML execution.</h2>
         </div>
-        <p>A quick read on where the depth is: biomedical signals, ML workflow discipline, and edge deployment thinking.</p>
+        <p>A concise view of where my work has depth: time-series data, ML workflow discipline, and edge deployment thinking.</p>
       </div>
 
       <div class="grid cols3">
         <div class="card reveal" style="--delay:40ms">
-          <h3>Biomedical time-series</h3>
-          <p>PPG windowing, filtering, segmentation, signal quality checks, normalization, and waveform-driven feature extraction.</p>
-          <div class="chips"><span class="chip">PPG</span><span class="chip">Windowing</span><span class="chip">Morphology</span></div>
+          <h3>Wearable time-series AI</h3>
+          <p>PPG windowing, filtering, segmentation, signal quality checks, normalization, and feature extraction for monitoring workflows.</p>
+          <div class="chips"><span class="chip">PPG</span><span class="chip">ECG</span><span class="chip">Windowing</span></div>
         </div>
         <div class="card reveal" style="--delay:90ms">
           <h3>Machine learning workflow</h3>
@@ -442,13 +905,13 @@
       <div class="sectionHead reveal">
         <div>
           <div class="eyebrow">Selected work</div>
-          <h2>Projects with a clear healthcare AI theme.</h2>
+          <h2>Projects focused on AI/ML, Edge AI, and intelligent systems.</h2>
         </div>
-        <p>Four focused projects rather than a scattered list.</p>
+        <p>Focused projects across health monitoring, TinyML, retrieval systems, computer vision, and IoT workflows.</p>
       </div>
 
       <div class="grid cols2">
-        <div class="card projectCard reveal" style="--delay:40ms">
+        <div class="card projectCard featuredCard reveal" style="--delay:40ms">
           <div>
             <div class="row">
               <h3>TinyML-based blood pressure monitoring from PPG</h3>
@@ -461,20 +924,33 @@
           <div class="row"><button class="btn" data-modal="tinyml">Details</button><span class="pill">Project</span></div>
         </div>
 
-        <div class="card projectCard reveal" style="--delay:90ms">
+        <div class="card projectCard featuredCard reveal" style="--delay:90ms">
           <div>
             <div class="row">
-              <h3>Survey on continuous cuffless BP monitoring using PPG</h3>
+              <h3>ECG + PPG-based BP estimation</h3>
               <span class="pill warn">In progress</span>
             </div>
-            <div class="meta">Critical survey • Validation • Clinical limitations</div>
-            <p>Writing a critical survey on PPG-based cuffless blood pressure monitoring, covering physiological mechanisms, datasets, calibration dependence, subject leakage, motion sensitivity, validation standards, and clinical translation gaps.</p>
-            <div class="chips"><span class="chip">Literature review</span><span class="chip">PPG</span><span class="chip">Validation</span><span class="chip">Clinical translation</span></div>
+            <div class="meta">PPG • ECG • Regression • Edge Impulse</div>
+            <p>Comparison-based machine learning project evaluating whether ECG and PPG together can improve blood pressure estimation compared with PPG-only modeling under controlled window and feature settings.</p>
+            <div class="chips"><span class="chip">ECG</span><span class="chip">PPG</span><span class="chip">Regression</span><span class="chip">Edge Impulse</span></div>
           </div>
-          <div class="row"><button class="btn" data-modal="survey">Details</button><span class="pill">Research</span></div>
+          <div class="row"><button class="btn" data-modal="ecgppg">Details</button><span class="pill">Research</span></div>
         </div>
 
         <div class="card projectCard reveal" style="--delay:40ms">
+          <div>
+            <div class="row">
+              <h3>Intelligent document processing</h3>
+              <span class="pill">RAG</span>
+            </div>
+            <div class="meta">Embeddings • Vector search • Retrieval workflows</div>
+            <p>Built retrieval-driven workflows for extracting, retrieving, and analyzing information from structured and unstructured documents using LLM APIs and vector databases.</p>
+            <div class="chips"><span class="chip">LangChain</span><span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">OpenAI APIs</span></div>
+          </div>
+          <div class="row"><button class="btn" data-modal="rag">Details</button><span class="pill">Project</span></div>
+        </div>
+
+        <div class="card projectCard reveal" style="--delay:90ms">
           <div>
             <div class="row">
               <h3>Face mask detection</h3>
@@ -486,29 +962,16 @@
           </div>
           <div class="row"><button class="btn" data-modal="cnn">Details</button><span class="pill">Project</span></div>
         </div>
-
-        <div class="card projectCard reveal" style="--delay:90ms">
-          <div>
-            <div class="row">
-              <h3>Smart Farmer</h3>
-              <span class="pill">IoT + cloud</span>
-            </div>
-            <div class="meta">IoT data • Cloud workflows • Monitoring</div>
-            <p>Integrated IoT device data into cloud workflows and storage to support monitoring and analytics-driven decision workflows for smart agriculture.</p>
-            <div class="chips"><span class="chip">IBM Watson</span><span class="chip">Node-RED</span><span class="chip">Cloudant DB</span><span class="chip">Python</span></div>
-          </div>
-          <div class="row"><button class="btn" data-modal="iot">Details</button><span class="pill">Project</span></div>
-        </div>
       </div>
     </section>
 
     <section class="section" id="opensource">
       <div class="sectionHead reveal">
         <div>
-          <div class="eyebrow">Open-source</div>
+          <div class="eyebrow">Open source</div>
           <h2>Full implementations, live on GitHub.</h2>
         </div>
-        <p>Five self-contained repos covering the pipeline end to end: signal quality, signal processing, diagnostic classification, regression, and interpretability.</p>
+        <p>Self-contained repos covering the pipeline end to end: signal quality, signal processing, diagnostic classification, regression, and interpretability.</p>
       </div>
 
       <div class="grid cols3">
@@ -516,7 +979,7 @@
           <div>
             <h3>PPG Signal Toolkit</h3>
             <div class="meta">Filtering • Beat detection • HR/HRV</div>
-            <p>Bandpass filtering, beat detection, heart-rate estimation, and HRV features (SDNN, RMSSD) from a synthetic PPG waveform.</p>
+            <p>Bandpass filtering, beat detection, heart-rate estimation, and HRV features from a synthetic PPG waveform.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">SciPy</span><span class="chip">PPG</span></div>
           </div>
           <div class="row"><a class="btn" href="https://github.com/shalinipotail/ppg-signal-toolkit" target="_blank" rel="noreferrer noopener">View repository →</a></div>
@@ -526,7 +989,7 @@
           <div>
             <h3>TinyML Quantization Benchmark</h3>
             <div class="meta">Float32 vs Int8 • Size • Latency</div>
-            <p>Trains a BP regression model and quantizes it to Int8, comparing model size, inference latency, and accuracy trade-offs for edge deployment.</p>
+            <p>Trains a BP regression model and quantizes it to Int8, comparing model size, inference latency, and accuracy trade-offs.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">TinyML</span></div>
           </div>
           <div class="row"><a class="btn" href="https://github.com/shalinipotail/tinyml-quantization-benchmark" target="_blank" rel="noreferrer noopener">View repository →</a></div>
@@ -535,8 +998,8 @@
         <div class="card projectCard reveal" style="--delay:140ms">
           <div>
             <h3>PPG Signal Quality Classifier</h3>
-            <div class="meta">Motion artifacts • 98% accuracy</div>
-            <p>Flags PPG windows as clean or motion-corrupted before they reach an HR/BP pipeline, using spectral entropy, variance, and peak-regularity features.</p>
+            <div class="meta">Motion artifacts • Quality screening</div>
+            <p>Flags PPG windows as clean or motion-corrupted before they reach an HR/BP pipeline using signal quality features.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">scikit-learn</span><span class="chip">Random Forest</span></div>
           </div>
           <div class="row"><a class="btn" href="https://github.com/shalinipotail/ppg-signal-quality-classifier" target="_blank" rel="noreferrer noopener">View repository →</a></div>
@@ -545,8 +1008,8 @@
         <div class="card projectCard reveal" style="--delay:40ms">
           <div>
             <h3>ECG Arrhythmia Classifier</h3>
-            <div class="meta">Normal • PVC • Fusion — 93% accuracy</div>
-            <p>Classifies heartbeats into Normal, PVC, and Fusion/Other from beat morphology features, using a small MLP trained on synthetic ECG waveforms.</p>
+            <div class="meta">Normal • PVC • Fusion</div>
+            <p>Classifies heartbeats from beat morphology features using a compact MLP trained on synthetic ECG waveforms.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">MLP</span><span class="chip">ECG</span></div>
           </div>
           <div class="row"><a class="btn" href="https://github.com/shalinipotail/ecg-arrhythmia-classifier" target="_blank" rel="noreferrer noopener">View repository →</a></div>
@@ -556,10 +1019,20 @@
           <div>
             <h3>Explainable BP Dashboard</h3>
             <div class="meta">Permutation importance • Interpretability</div>
-            <p>Goes beyond accuracy: a static dashboard showing which physiological features actually drive the BP prediction, and confirming a sanity-check feature carries no weight.</p>
+            <p>A static dashboard showing which features drive BP prediction and how interpretability can support model review.</p>
             <div class="chips"><span class="chip">Python</span><span class="chip">Random Forest</span><span class="chip">XAI</span></div>
           </div>
           <div class="row"><a class="btn" href="https://github.com/shalinipotail/explainable-bp-dashboard" target="_blank" rel="noreferrer noopener">View repository →</a></div>
+        </div>
+
+        <div class="card projectCard reveal" style="--delay:140ms">
+          <div>
+            <h3>Smart Farmer</h3>
+            <div class="meta">IoT data • Cloud workflows • Monitoring</div>
+            <p>Integrated IoT device data into cloud workflows and storage for analytics-driven monitoring in smart agriculture.</p>
+            <div class="chips"><span class="chip">IBM Watson</span><span class="chip">Node-RED</span><span class="chip">Cloudant DB</span></div>
+          </div>
+          <div class="row"><button class="btn" data-modal="iot">Details</button></div>
         </div>
       </div>
 
@@ -574,27 +1047,27 @@
       <div class="sectionHead reveal">
         <div>
           <div class="eyebrow">Research</div>
-          <h2>Focused on cuffless BP estimation and wearable AI.</h2>
+          <h2>Focused on cuffless BP estimation, TinyML, and Edge AI.</h2>
         </div>
-        <p>AI/ML applied to physiological signals and resource-constrained healthcare devices.</p>
+        <p>AI/ML applied to real-world sensor data, continuous monitoring, and resource-constrained edge devices.</p>
       </div>
 
       <div class="grid cols2">
         <div class="card reveal" style="--delay:40ms">
           <h3>Current research themes</h3>
           <ul class="list">
-            <li>PPG signal preprocessing, windowing, and feature extraction</li>
+            <li>PPG and ECG data preprocessing, windowing, and feature extraction</li>
             <li>Machine learning models for SBP, DBP, and MAP estimation</li>
             <li>Float32 and Int8 model comparison for edge deployment constraints</li>
-            <li>Calibration, dataset bias, subject leakage, and clinical validation limitations</li>
-            <li>Survey writing on cuffless BP methods, validation, and clinical translation</li>
+            <li>Calibration, dataset bias, subject leakage, and validation limitations</li>
+            <li>Survey writing on cuffless BP methods, evaluation, and clinical translation</li>
           </ul>
         </div>
 
         <div class="card reveal" style="--delay:90ms">
           <h3>Research direction</h3>
-          <p>I am interested in AI systems that move beyond benchmark accuracy and address real-world reliability, interpretability, and deployment constraints in healthcare and wearable sensing.</p>
-          <div class="chips"><span class="chip">Healthcare AI</span><span class="chip">Wearable sensing</span><span class="chip">Biomedical signals</span><span class="chip">Reliable ML</span></div>
+          <p>I am interested in AI systems that move beyond benchmark accuracy and address real-world reliability, interpretability, and deployment constraints in health monitoring, sensor-based prediction, and intelligent retrieval.</p>
+          <div class="chips"><span class="chip">Health AI</span><span class="chip">Wearable sensing</span><span class="chip">Sensor data</span><span class="chip">Reliable ML</span></div>
         </div>
       </div>
     </section>
@@ -603,7 +1076,7 @@
       <div class="sectionHead reveal">
         <div>
           <div class="eyebrow">Skills</div>
-          <h2>Tools and methods aligned to your target profile.</h2>
+          <h2>Tools and methods aligned to my target profile.</h2>
         </div>
         <p>Skills that support the story the projects are telling.</p>
       </div>
@@ -617,16 +1090,16 @@
         </div>
 
         <div class="card reveal" style="--delay:90ms">
-          <h3>Biomedical + signal processing</h3>
+          <h3>Health AI + time-series</h3>
           <div class="chips">
-            <span class="chip">Biomedical Signal Processing</span><span class="chip">PPG Signal Processing</span><span class="chip">Cuffless BP Estimation</span><span class="chip">Time-series</span><span class="chip">Windowing</span><span class="chip">Filtering</span><span class="chip">Wearable sensing</span>
+            <span class="chip">Health AI</span><span class="chip">PPG Signal Processing</span><span class="chip">ECG Data</span><span class="chip">Cuffless BP Estimation</span><span class="chip">Time-series</span><span class="chip">Windowing</span><span class="chip">Filtering</span><span class="chip">Wearable sensing</span>
           </div>
         </div>
 
         <div class="card reveal" style="--delay:40ms">
           <h3>Tools + languages</h3>
           <div class="chips">
-            <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">SQL</span><span class="chip">C</span><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Jupyter Notebook</span><span class="chip">GitHub</span>
+            <span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">SQL</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Jupyter Notebook</span><span class="chip">GitHub</span>
           </div>
         </div>
 
@@ -652,7 +1125,7 @@
           <div class="timelineItem">
             <strong>Master of Science in Computer Engineering</strong>
             <span>The University of Texas at Dallas</span>
-            <span>Focus: Artificial Intelligence, Machine Learning, TinyML, Biomedical Signal Processing, Embedded Systems</span>
+            <span>Focus: Artificial Intelligence, Machine Learning, TinyML, Edge AI, Embedded Systems</span>
           </div>
           <div class="timelineItem">
             <strong>Bachelor of Technology in Artificial Intelligence and Machine Learning</strong>
@@ -707,8 +1180,8 @@
     </section>
 
     <footer class="footer">
-      <div>© <span id="y"></span> Shalini Potail</div>
-      <div>PPG · TinyML · Wearable Healthcare AI</div>
+      <div>© <span id="y"></span> Karthika Potail</div>
+      <div>AI/ML · TinyML · Edge AI</div>
     </footer>
   </div>
 
@@ -735,13 +1208,21 @@
           { label: "Skills used", value: "Python, MATLAB, signal processing, feature extraction, model evaluation, quantization, Edge Impulse, TinyML." }
         ]
       },
-      survey: {
-        title: "Survey on continuous cuffless BP monitoring using PPG",
+      ecgppg: {
+        title: "ECG + PPG-based BP estimation",
         blocks: [
-          { label: "Full title", value: "Continuous Cuffless Blood Pressure Monitoring Using PPG: A Critical Survey of Methods, Validation, and Clinical Limitations" },
-          { label: "Focus", value: "Critical review of PPG-based cuffless blood pressure estimation as a measurement problem, not just a regression problem." },
-          { label: "Topics", value: "PPG morphology, PAT/PTT, ML and deep learning methods, datasets, calibration, subject leakage, motion artifacts, validation standards, and clinical translation." },
-          { label: "Status", value: "In progress." }
+          { label: "Focus", value: "Controlled comparison of PPG-only and ECG + PPG workflows for continuous blood pressure estimation." },
+          { label: "Pipeline", value: "Raw PPG/ECG windows → feature extraction → regression model training → SBP/DBP/MAP evaluation → Edge Impulse testing." },
+          { label: "Goal", value: "Evaluate how multimodal signals and feature choices affect BP estimation accuracy and reliability." },
+          { label: "Skills used", value: "Python, Edge Impulse, regression modeling, time-series windows, model evaluation, error analysis." }
+        ]
+      },
+      rag: {
+        title: "Intelligent document processing",
+        blocks: [
+          { label: "Focus", value: "Retrieval-augmented workflows for searching, extracting, and analyzing information from documents." },
+          { label: "Workflow", value: "Document ingestion → chunking → embeddings → vector storage → retrieval → LLM response generation." },
+          { label: "Skills used", value: "LangChain, LangGraph, FAISS, ChromaDB, OpenAI APIs, prompt engineering, Python." }
         ]
       },
       cnn: {
@@ -763,7 +1244,8 @@
       contact: {
         title: "Contact",
         blocks: [
-          { label: "Name", value: "Shalini Potail" },
+          { label: "Name", value: "Karthika Potail" },
+          { label: "Also known as", value: "Karthika Shalini Potail" },
           { label: "Email", value: "shalinipotail@gmail.com" },
           { label: "LinkedIn", value: "linkedin.com/in/shalinipotail" },
           { label: "Preferred", value: "Email or LinkedIn for fastest response." }
@@ -838,7 +1320,6 @@
       });
     });
 
-    // Animated PPG pulse line: redraw dash offset to look like a live trace, plus a soft glow filter
     const pulsePath = document.getElementById("pulsePath");
     const bpmLabel = document.getElementById("bpmLabel");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -847,7 +1328,7 @@
       pulsePath.style.strokeDasharray = len;
       pulsePath.style.strokeDashoffset = len;
       let start = null;
-      const duration = 2600;
+      const duration = 3000;
       function animatePulse(ts){
         if(start === null) start = ts;
         const elapsed = (ts - start) % duration;
@@ -860,117 +1341,66 @@
       setInterval(() => {
         bpm = 70 + Math.round(Math.random() * 6);
         bpmLabel.textContent = bpm + " BPM";
-      }, 2600);
+      }, 3000);
     }
 
-    // Sakura petals ambient background
+    // Elegant constellation background
     if(!reduceMotion){
-      const canvas = document.getElementById("petals");
+      const canvas = document.getElementById("constellation");
       const ctx = canvas.getContext("2d");
-      let W, H, petals;
-      const isSmall = window.innerWidth < 720;
-      const count = isSmall ? 12 : 22;
+      let W, H, points;
 
       function resize(){
         W = canvas.width = window.innerWidth;
         H = canvas.height = window.innerHeight;
-      }
-      function makePetal(){
-        return {
+        const count = window.innerWidth < 720 ? 34 : 70;
+        points = Array.from({length: count}, () => ({
           x: Math.random() * W,
-          y: Math.random() * -H,
-          r: 4 + Math.random() * 5,
-          speedY: 0.35 + Math.random() * 0.55,
-          speedX: (Math.random() - 0.5) * 0.6,
-          rot: Math.random() * Math.PI * 2,
-          rotSpeed: (Math.random() - 0.5) * 0.02,
-          hue: Math.random() > 0.5 ? "rgba(255,140,180," : "rgba(150,220,255,",
-          alpha: 0.25 + Math.random() * 0.35
-        };
+          y: Math.random() * H,
+          vx: (Math.random() - .5) * .22,
+          vy: (Math.random() - .5) * .22,
+          r: .7 + Math.random() * 1.8
+        }));
       }
-      function init(){
-        resize();
-        petals = Array.from({length: count}, makePetal);
-      }
-      function drawPetal(p){
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot);
-        ctx.beginPath();
-        ctx.ellipse(0, 0, p.r, p.r * 0.6, 0, 0, Math.PI * 2);
-        ctx.fillStyle = p.hue + p.alpha + ")";
-        ctx.fill();
-        ctx.restore();
-      }
-      function tick(){
-        ctx.clearRect(0, 0, W, H);
-        petals.forEach(p => {
-          p.y += p.speedY;
-          p.x += p.speedX;
-          p.rot += p.rotSpeed;
-          if(p.y > H + 20){
-            p.y = -20;
-            p.x = Math.random() * W;
+
+      function draw(){
+        ctx.clearRect(0,0,W,H);
+
+        for(let i=0; i<points.length; i++){
+          const p = points[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if(p.x < 0 || p.x > W) p.vx *= -1;
+          if(p.y < 0 || p.y > H) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+          ctx.fillStyle = "rgba(222,230,255,.42)";
+          ctx.fill();
+
+          for(let j=i+1; j<points.length; j++){
+            const q = points[j];
+            const dx = p.x - q.x;
+            const dy = p.y - q.y;
+            const d = Math.sqrt(dx*dx + dy*dy);
+            if(d < 130){
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = `rgba(110,231,255,${(1 - d/130) * .14})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
           }
-          drawPetal(p);
-        });
-        requestAnimationFrame(tick);
-      }
-      window.addEventListener("resize", resize);
-      init();
-      requestAnimationFrame(tick);
-    }
-
-    // ---------------------------------------------------------------
-    // Visitor notification (optional) — emails you when someone opens
-    // this page, throttled to once per visitor per day so refreshes
-    // and repeat visits don't spam your inbox or burn your free quota.
-    //
-    // Setup (takes ~3 minutes, no cost for normal portfolio traffic):
-    //   1. Create a free account at https://www.emailjs.com
-    //   2. Add an Email Service (e.g. connect your Gmail) -> copy its Service ID
-    //   3. Create an Email Template with variables {{page_url}}, {{referrer}},
-    //      {{visit_time}} -> copy its Template ID
-    //   4. Account -> General -> copy your Public Key
-    //   5. Paste all three values into the CONFIG object below
-    //
-    // Until you fill in real IDs below, this silently does nothing.
-    // ---------------------------------------------------------------
-    (function setupVisitNotifications(){
-      const CONFIG = {
-        publicKey: "YOUR_EMAILJS_PUBLIC_KEY",
-        serviceId: "YOUR_EMAILJS_SERVICE_ID",
-        templateId: "YOUR_EMAILJS_TEMPLATE_ID",
-      };
-
-      const isConfigured =
-        !CONFIG.publicKey.startsWith("YOUR_") &&
-        !CONFIG.serviceId.startsWith("YOUR_") &&
-        !CONFIG.templateId.startsWith("YOUR_");
-
-      if(!isConfigured) return;
-
-      const THROTTLE_KEY = "portfolio_visit_notified_on";
-      const today = new Date().toDateString();
-      if(localStorage.getItem(THROTTLE_KEY) === today) return;
-
-      const script = document.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
-      script.onload = function(){
-        try {
-          emailjs.init({ publicKey: CONFIG.publicKey });
-          emailjs.send(CONFIG.serviceId, CONFIG.templateId, {
-            page_url: window.location.href,
-            referrer: document.referrer || "direct / unknown",
-            visit_time: new Date().toLocaleString(),
-          });
-          localStorage.setItem(THROTTLE_KEY, today);
-        } catch (err) {
-          console.warn("Visit notification failed:", err);
         }
-      };
-      document.body.appendChild(script);
-    })();
+
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener("resize", resize);
+      resize();
+      draw();
+    }
   </script>
 </body>
 </html>
